@@ -10,7 +10,7 @@ export const Sponsors = () => {
           <div className="space-y-3 text-center">
             <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Our Sponsors</h1>
             <p className="mx-auto max-w-3xl text-gray-500 md:text-xl/relaxed dark:text-gray-400">
-              Thank you to everyone who funds and supports Brown Space Engineering.
+              We are very grateful to everyone who funds and supports Brown Space Engineering.
             </p>
           </div>
         </div>
@@ -27,14 +27,14 @@ export const Sponsors = () => {
           >
             <Card className="w-full max-w-xs border border-gray-200 bg-white shadow-lg rounded-lg overflow-hidden transition-colors hover:z-10 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 dark:border-gray-800 dark:bg-gray-950 dark:hover:z-10 dark:focus-visible:ring-gray-300">
               <CardHeader className="flex justify-center py-4 bg-gray-100 dark:bg-gray-900">
-                <h2 className="text-xl font-semibold text-gray-900 dark:text-white">Company Name</h2>
+                <h2 className="text-xl font-semibold text-gray-900 dark:text-white">Platinum</h2>
               </CardHeader>
               <CardContent className="flex justify-center p-6">
                 <img
                   src="/placeholder.svg"
                   width="200"
                   height="50"
-                  alt="Sponsor"
+                  alt="Brown School of Engineering"
                   className="object-contain object-center"
                 />
               </CardContent>
@@ -51,14 +51,14 @@ export const Sponsors = () => {
           >
             <Card className="w-full max-w-xs border border-gray-200 bg-white shadow-lg rounded-lg overflow-hidden transition-colors hover:z-10 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 dark:border-gray-800 dark:bg-gray-950 dark:hover:z-10 dark:focus-visible:ring-gray-300">
               <CardHeader className="flex justify-center py-4 bg-gray-100 dark:bg-gray-900">
-                <h2 className="text-xl font-semibold text-gray-900 dark:text-white">Company Name</h2>
+                <h2 className="text-xl font-semibold text-gray-900 dark:text-white">Platinum</h2>
               </CardHeader>
               <CardContent className="flex justify-center p-6">
                 <img
                   src="/placeholder.svg"
                   width="200"
                   height="50"
-                  alt="Sponsor"
+                  alt="Onshape"
                   className="object-contain object-center"
                 />
               </CardContent>
@@ -75,14 +75,14 @@ export const Sponsors = () => {
           >
             <Card className="w-full max-w-xs border border-gray-200 bg-white shadow-lg rounded-lg overflow-hidden transition-colors hover:z-10 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 dark:border-gray-800 dark:bg-gray-950 dark:hover:z-10 dark:focus-visible:ring-gray-300">
               <CardHeader className="flex justify-center py-4 bg-gray-100 dark:bg-gray-900">
-                <h2 className="text-xl font-semibold text-gray-900 dark:text-white">Company Name</h2>
+                <h2 className="text-xl font-semibold text-gray-900 dark:text-white">Platinum</h2>
               </CardHeader>
               <CardContent className="flex justify-center p-6">
                 <img
                   src="/placeholder.svg"
                   width="200"
                   height="50"
-                  alt="Sponsor"
+                  alt="CUBECOM"
                   className="object-contain object-center"
                 />
               </CardContent>

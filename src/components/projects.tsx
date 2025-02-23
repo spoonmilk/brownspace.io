@@ -1,7 +1,7 @@
 import { motion, useInView, useAnimation } from "framer-motion";
 import { useEffect, useRef } from "react";
-import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
+import { MemberCard, MemberCardDescription, MemberCardHeader, MemberCardTitle } from '@/components/ui/member-card'
 
 interface ArticleProps {
   title: string;
@@ -14,23 +14,23 @@ const articleList: ArticleProps[] = [
   {
     title: "PVDX",
     summary:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
+      "The primary mission of the Perovskite Visuals and Degradation eXperiment is to test next-generation, highly efficient perovskite solar cells in harsh low-Earth orbit in collaboration with the Padture lab.",
     imageSrc: "/2024.png",
-    link: "https://en.wikipedia.org/wiki/EQUiSat",
+    link: "https://www.brown.edu/news/2021-04-21/cubesat",
   },
   {
     title: "EQUiSat",
     summary:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
+      "Our EQUISat project was a 1U CubeSat designed and built by students, launched in 2018 with the mission of testing a battery technology that had never flown in space. ",
     imageSrc: "/2024.png",
     link: "https://en.wikipedia.org/wiki/EQUiSat",
   },
   {
     title: "SBUDNIC",
     summary:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
+      "We created the SPUDNIC 3U CubeSat, sent up in 2022, designed to demonstrate a practical, low-cost drag sail to cut down on space debris.",
     imageSrc: "/2024.png",
-    link: "https://en.wikipedia.org/wiki/EQUiSat",
+    link: "https://www.sbudnic.space/home",
   },
   
 ];
@@ -87,7 +87,7 @@ export const Projects = () => {
   return (
     <section ref={ref} className="container scale-90 py-0">
       <div className="flex flex-col items-center text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-16">Learn All About Our Past Projects</h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-16">Learn All About Our Projects</h2>
 
         <div className="flex flex-col gap-8 w-full">
           {/* First row: Centered with three articles */}
@@ -103,49 +103,19 @@ export const Projects = () => {
                 variants={cardVariants[index % 3]} // Cycle through the variants
                 onClick={() => handleCardClick(link)}
               >
-                <Card className="w-full h-[450px] flex flex-col group">
+                <MemberCard className="w-full h-[450px] flex flex-col group">
                   <img
                     src={imageSrc}
                     alt={title}
                     className="w-full h-48 object-cover rounded-t-lg group-hover:filter-none group-hover:grayscale-0 filter grayscale transition duration-300 ease-in-out overflow-hidden"
                   />
-                  <CardHeader className="flex-1 p-4 flex flex-col justify-between space-y-2">
-                    <CardTitle className="text-lg font-semibold">{title}</CardTitle>
-                    <CardDescription className="text-md mt-2 text-muted-foreground overflow-hidden text-ellipsis">
+                  <MemberCardHeader className="flex-1 p-4 flex flex-col gap-y-12">
+                    <MemberCardTitle className="text-lg font-semibold">{title}</MemberCardTitle>
+                    <MemberCardDescription className="text-md text-muted-foreground overflow-hidden text-ellipsis">
                       {summary}
-                    </CardDescription>
-                  </CardHeader>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-
-          {/* Second row: Centered with two articles */}
-          <div className="hidden xl:col-span-3 xl:flex xl:justify-center xl:gap-8">
-            {articleList.slice(3, 5).map(({ title, summary, imageSrc, link }: ArticleProps, index) => (
-              <motion.div
-                key={index + 3}
-                className="w-full max-w-md cursor-pointer"
-                initial="hidden"
-                animate={cardControls}
-                whileHover={{ scale: 1.05 }} // Hover effect
-                transition={{ type: "spring", stiffness: 300, damping: 15 }} // Spring animation
-                variants={cardVariants[(index + 1) % 3]} // Cycle variants differently
-                onClick={() => handleCardClick(link)}
-              >
-                <Card className="w-full h-[450px] flex flex-col group">
-                  <img
-                    src={imageSrc}
-                    alt={title}
-                    className="w-full h-48 object-cover rounded-t-lg group-hover:filter-none group-hover:grayscale-0 filter grayscale transition duration-300 ease-in-out overflow-hidden"
-                  />
-                  <CardHeader className="flex-1 p-4 flex flex-col justify-between space-y-2">
-                    <CardTitle className="text-lg font-semibold">{title}</CardTitle>
-                    <CardDescription className="text-md mt-2 text-muted-foreground overflow-hidden text-ellipsis">
-                      {summary}
-                    </CardDescription>
-                  </CardHeader>
-                </Card>
+                    </MemberCardDescription>
+                  </MemberCardHeader>
+                </MemberCard>
               </motion.div>
             ))}
           </div>

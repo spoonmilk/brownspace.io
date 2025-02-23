@@ -35,10 +35,10 @@ const routeList: RouteProps[] = [
     href: "/projects",
     label: "Projects",
   },
-  // {
-  //   href: "/subgroups",
-  //   label: "Subgroups",
-  // },
+  {
+     href: "/subgroups",
+     label: "Subgroups",
+  },
   {
     href: "/sponsors",
     label: "Sponsors"

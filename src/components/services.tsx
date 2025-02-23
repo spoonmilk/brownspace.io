@@ -32,7 +32,7 @@ const serviceList: ServiceProps[] = [
 ];
 
 function Model({ grayscale }: { grayscale: boolean }) {
-  const { scene } = useGLTF("/pvdx-assembly.glb"); // Replace with your GLTF model path
+  const { scene } = useGLTF("/iss.glb"); // Replace with your GLTF model path
   const ref = useRef<any>();
 
   // Rotate the model slightly on the Y-axis
