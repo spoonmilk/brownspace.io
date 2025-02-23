@@ -17,9 +17,9 @@ export const Sponsors = () => {
       </div>
       <div className="container px-4 pb-12 md:pb-24">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          <SponsorCard tier="School Sponsor" img="/sponsor_logos/soe_logo.jpg" imgAlt="Brown School of Engineering"/>
+          <SponsorCard tier="School Sponsor" img="/sponsor_logos/soe_logo.jpg" imgAlt="Brown School of Engineering" scale={1.2}/>
           <SponsorCard tier="Platinum" img="/sponsor_logos/onshape_logo.png" imgAlt="Onshape" />
-          <SponsorCard tier="Platinum" img="/sponsor_logos/cubecom_logo.png" imgAlt="CUBECOM" />
+          <SponsorCard tier="Platinum" img="/sponsor_logos/cubecom_logo.jpg" imgAlt="CUBECOM" scale={0.8} />
         </div>
         <div className="flex justify-center mt-16">
           <Button variant="outline" size="sm">
@@ -31,7 +31,7 @@ export const Sponsors = () => {
   )
 }
 
-const SponsorCard = ({ tier, img, imgAlt }: {tier: string, img: string, imgAlt: string}) => {
+const SponsorCard = ({ tier, img, imgAlt, scale=1 }: {tier: string, img: string, imgAlt: string, scale?: number}) => {
   return (
     <motion.div
       whileHover={{
@@ -40,17 +40,18 @@ const SponsorCard = ({ tier, img, imgAlt }: {tier: string, img: string, imgAlt: 
       }}
       className="flex w-full items-center justify-center"
     >
-      <Card className="w-full max-w-xs border border-gray-200 bg-white shadow-lg rounded-lg overflow-hidden transition-colors hover:z-10 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 dark:border-gray-800 dark:bg-gray-950 dark:hover:z-10 dark:focus-visible:ring-gray-300">
+      <Card style={{height: "30vh"}} className="w-full max-w-xs border border-gray-200 bg-white shadow-lg rounded-lg overflow-hidden transition-colors hover:z-10 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 dark:border-gray-800 dark:bg-gray-950 dark:hover:z-10 dark:focus-visible:ring-gray-300 flex flex-col">
         <CardHeader className="flex justify-center py-4 bg-gray-100 dark:bg-gray-900">
           <h2 className="text-xl font-semibold text-gray-900 dark:text-white text-center">{tier}</h2>
         </CardHeader>
-        <CardContent className="flex justify-center p-6">
+        <CardContent className="flex flex-1 justify-center p-6">
           <img
             src={img}
             width="200"
             height="50"
             alt={imgAlt}
             className="object-contain object-center"
+            style={{scale: `${scale}`}}
           />
         </CardContent>
       </Card>
