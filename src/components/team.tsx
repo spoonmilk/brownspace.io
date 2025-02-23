@@ -1,18 +1,21 @@
 import { buttonVariants } from "@/components/ui/button";
 import {
   Card,
-  CardContent,
   CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
 import { Facebook, Instagram, Linkedin } from "lucide-react";
-import { motion } from "framer-motion"; // Import motion
-import { TeamProps, SocialNetworksProps } from "./types/team"
-import teamList from "./member-info"
+import { motion } from "framer-motion";
+import { TeamProps, SocialNetworksProps } from "./types/team";
+import teamList from "./member-info";
 
-export const Team = () => {
+interface TeamComponentProps {
+  subgroup?: string;
+}
+
+export const Team = ({ subgroup }: TeamComponentProps) => {
   const socialIcon = (iconName: string) => {
     switch (iconName) {
       case "Linkedin":
@@ -21,28 +24,47 @@ export const Team = () => {
         return <Facebook size="20" />;
       case "Instagram":
         return <Instagram size="20" />;
+      default:
+        return null;
     }
   };
 
+  // Filter the team list based on the subgroup prop.
+  const filteredTeam = subgroup
+    ? teamList.filter((member: TeamProps) => member.subgroup === subgroup)
+    : teamList;
+
+  // Sort the filteredTeam by first name (case-insensitive).
+  // If you want to sort by the entire name, simply replace
+  // the split logic with `a.name.toLowerCase().localeCompare(b.name.toLowerCase())`.
+  const sortedTeam = [...filteredTeam].sort((a, b) => {
+    const [firstNameA] = a.name.split(" ");
+    const [firstNameB] = b.name.split(" ");
+    return firstNameA.toLowerCase().localeCompare(firstNameB.toLowerCase());
+  });
+
   return (
-    <div className="pt-24 grid md:grid-cols-2 lg:grid-cols-4 gap-8 gap-y-10">
-      {teamList.map(
-        ({ imageUrl, name, position, socialNetworks }: TeamProps) => (
+    <div className="pt-12">
+      {subgroup && (
+        <h2 className="text-center text-3xl font-bold mt-4 mb-8">
+          {subgroup}
+        </h2>
+      )}
+      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 gap-y-10">
+        {sortedTeam.map(({ imageUrl, name, position, socialNetworks }) => (
           <motion.div
             key={name}
-            whileHover={{ scale: 1.05 }} // Hover animation
-            initial={{ opacity: 0, y: 50 }} // Initial state (invisible and slightly down)
-            whileInView={{ opacity: 1, y: 0 }} // Animation for when in view
-            viewport={{ once: true, amount: 0.3 }} // Trigger animation once 30% is in view
+            whileHover={{ scale: 1.05 }}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
             transition={{
               type: "spring",
               stiffness: 300,
-              duration: 0.5, // Duration for both initial and hover animations
+              duration: 0.5,
             }}
           >
-            <Card
-              className="bg-muted/50 relative mt-8 flex flex-col justify-center items-center"
-            >
+            <Card className="h-[180px] bg-muted/50 relative mt-8 flex flex-col justify-center items-center">
               <CardHeader className="mt-8 flex justify-center items-center pb-2">
                 <img
                   src={imageUrl}
@@ -54,11 +76,6 @@ export const Team = () => {
                   {position}
                 </CardDescription>
               </CardHeader>
-
-              <CardContent className="text-center pb-2">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-              </CardContent>
-
               <CardFooter>
                 {socialNetworks.map(({ name, url }: SocialNetworksProps) => (
                   <div key={name}>
@@ -79,8 +96,8 @@ export const Team = () => {
               </CardFooter>
             </Card>
           </motion.div>
-        )
-      )}
+        ))}
+      </div>
     </div>
   );
 };

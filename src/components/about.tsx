@@ -12,11 +12,11 @@ export const About = () => {
 
   const stats: statsProps[] = [
     {
-      quantity: 892,
-      description: "Engineering Hours",
+      quantity: 17,
+      description: "Years of Excellence",
     },
     {
-      quantity: 32,
+      quantity: 120,
       description: "Members",
     },
     {
@@ -25,7 +25,7 @@ export const About = () => {
     },
     {
       quantity: 6,
-      description: "Teams",
+      description: "Subgroups",
     },
   ];
 
