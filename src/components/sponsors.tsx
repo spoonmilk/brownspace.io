@@ -17,9 +17,9 @@ export const Sponsors = () => {
       </div>
       <div className="container px-4 pb-12 md:pb-24">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          <SponsorCard tier="School Sponsor" img="../assets/sponsor_logos/soe_logo.jpg" imgAlt="Brown School of Engineering"/>
-          <SponsorCard tier="Platinum" img="../assets/sponsor_logos/onshape_logo.png" imgAlt="Onshape" />
-          <SponsorCard tier="Platinum" img="../assets/sponsor_logos/cubecom_logo.png" imgAlt="CUBECOM" />
+          <SponsorCard tier="School Sponsor" img="/sponsor_logos/soe_logo.jpg" imgAlt="Brown School of Engineering"/>
+          <SponsorCard tier="Platinum" img="/sponsor_logos/onshape_logo.png" imgAlt="Onshape" />
+          <SponsorCard tier="Platinum" img="/sponsor_logos/cubecom_logo.png" imgAlt="CUBECOM" />
         </div>
         <div className="flex justify-center mt-16">
           <Button variant="outline" size="sm">
