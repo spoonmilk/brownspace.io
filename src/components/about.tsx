@@ -1,7 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import NumberTicker from "@/components/ui/number-ticker"; // Assuming correct import path
 import Globe from "./ui/globe";
+import NumberTicker from "@/components/ui/number-ticker"; // Assuming correct import path
 import { Separator } from "./ui/separator";
 
 export const About = () => {
@@ -12,11 +12,11 @@ export const About = () => {
 
   const stats: statsProps[] = [
     {
-      quantity: 17,
+      quantity: 14,
       description: "Years of Excellence",
     },
     {
-      quantity: 120,
+      quantity: 100,
       description: "Members",
     },
     {
@@ -24,7 +24,7 @@ export const About = () => {
       description: "Satellites",
     },
     {
-      quantity: 6,
+      quantity: 7,
       description: "Subgroups",
     },
   ];
@@ -58,7 +58,7 @@ export const About = () => {
             className="w-[auto] lg:w-[1000px] min-w-[200px] justify-center object-contain rounded-lg"
             variants={fadeUpVariants}
           >
-            <Globe />
+            <Globe></Globe>
           </motion.div>
 
           <motion.div className="bg-green-0 flex flex-col justify-between" variants={fadeUpVariants}>
@@ -86,7 +86,7 @@ export const About = () => {
                     variants={fadeUpVariants}
                   >
                     <h2 className="text-3xl sm:text-4xl font-bold ">
-                      <NumberTicker value={quantity} />+
+                      <NumberTicker value={quantity} />
                     </h2>
                     <p className="text-xl text-muted-foreground">{description}</p>
                   </motion.div>

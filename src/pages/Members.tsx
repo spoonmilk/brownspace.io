@@ -16,6 +16,7 @@ function Members() {
         <Team subgroup="Flight Software" />
         <Team subgroup="R&D" />
         <Team subgroup="ADCS" />
+        <Team subgroup="Operations" />
       </section>
       <div className="mt-12">
         <Footer />

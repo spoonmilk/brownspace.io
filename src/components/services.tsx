@@ -46,7 +46,7 @@ function Model({ grayscale }: { grayscale: boolean }) {
     <primitive 
       object={scene}
       ref={ref}
-      scale={4.5}
+      scale={300}
       position={[0, 0, 0]}
     />
   );
