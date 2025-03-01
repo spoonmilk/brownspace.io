@@ -33,7 +33,7 @@ export const Team = ({ subgroup }: TeamComponentProps) => {
   const filteredTeam = subgroup
     ? teamList.filter((member: TeamProps) => member.subgroup === subgroup)
     : teamList;
-
+  console.log(filteredTeam);
   // Sort the filteredTeam by first name (case-insensitive).
   // If you want to sort by the entire name, simply replace
   // the split logic with `a.name.toLowerCase().localeCompare(b.name.toLowerCase())`.
@@ -72,7 +72,7 @@ export const Team = ({ subgroup }: TeamComponentProps) => {
                   className="absolute -top-12 rounded-full w-24 h-24 aspect-square object-cover"
                 />
                 <CardTitle className="text-center">{name}</CardTitle>
-                <CardDescription className="text-primary">
+                <CardDescription className="text-primary text-center">
                   {position}
                 </CardDescription>
               </CardHeader>
@@ -89,7 +89,7 @@ export const Team = ({ subgroup }: TeamComponentProps) => {
                       })}
                     >
                       <span className="sr-only">{name} icon</span>
-                      {socialIcon(name)}
+                      {(url == "") ? <></> : socialIcon(name)}
                     </a>
                   </div>
                 ))}
