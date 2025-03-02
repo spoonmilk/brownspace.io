@@ -1,8 +1,11 @@
 import React, { useRef, useEffect, useState, Suspense } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { OrbitControls, useGLTF } from "@react-three/drei";
+import { OrbitControls, useGLTF, Environment } from "@react-three/drei";
 import { motion, useAnimation, useInView } from "framer-motion";
 import { Card, CardDescription, CardHeader, CardTitle } from "./ui/card";
+import open_source from "../assets/open-source.svg";
+import collaborative from "../assets/collaborative.svg";
+import cutting_edge from "../assets/cutting-edge.svg";
 
 interface ServiceProps {
   title: string;
@@ -12,33 +15,45 @@ interface ServiceProps {
 
 const serviceList: ServiceProps[] = [
   {
-    title: "Open Source",
+    title: "Open Source", 
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi nesciunt est nostrum omnis ab sapiente.",
-    icon: <img src="/cost.png" className="w-[50px] h-auto opacity" />,
+      "BSE is committed to making space accessible, with all of our projects being open source and available to the public.",
+    icon: <img src={ open_source } className="w-[25px] h-auto opacity dark:invert" />,
   },
   {
     title: "Collaborative",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi nesciunt est nostrum omnis ab sapiente.",
-    icon: <img src="/team.png" className="w-[50px] h-auto" />,
+      "Our subgroups are comprised of students from all disciplines and experience levels, united under a passion for spaceflight.",
+    icon: <img src={ collaborative } className="w-[30px] h-auto dark:invert" />,
   },
   {
     title: "Cutting Edge",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi nesciunt est nostrum omnis ab sapiente.",
-    icon: <img src="/cutting-edge.png" className="w-[50px] h-auto" />,
+      "From novel control algorithms to compliant deployment systems, we push the limits of student engineering.",
+    icon: <img src={ cutting_edge } className="w-[30px] h-auto dark:invert" />,
   },
 ];
 
-function Model({ grayscale }: { grayscale: boolean }) {
+function Model() {
   const { scene } = useGLTF("/pvdsmall.glb"); // Replace with your GLTF model path
   const ref = useRef<any>();
+
+  // Update materials to have a metallic texture
+  useEffect(() => {
+    scene.traverse((child) => {
+      if ((child as any).isMesh && (child as any).material) {
+        const material = (child as any).material;
+        material.metalness = 1;      // Increase metalness for a shiny look
+        material.roughness = 0.2;      // Lower roughness for smoother reflections
+        material.needsUpdate = true;
+      }
+    });
+  }, [scene]);
 
   // Rotate the model slightly on the Y-axis
   useFrame(() => {
     if (ref.current) {
-      ref.current.rotation.y += 0.01; // Adjust the speed of rotation
+      ref.current.rotation.y += 0.01; // Adjust the speed of rotation as needed
     }
   });
 
@@ -89,7 +104,10 @@ export const Services = () => {
             Brown University's Largest Undergraduate Engineering Club
           </h2>
           <p className="text-muted-foreground text-xl mt-4 mb-8">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna libero, pretium congue tincidunt eu, sodales eu tortor. Morbi malesuada dapibus ante eu sodales. Ut cursus erat sed auctor vestibulum. Vivamus facilisis metus nunc. Etiam erat lectus, dapibus id sollicitudin vitae, dapibus eu leo.
+            Brown Space Engineering is a student-run spaceflight engineering club committed to a philosophy
+            of accessibility, inclusion, and do-it-yourself engineering. The largest engineering club at Brown, BSE involves
+            students of all disciplines, experience levels, and backgrounds in the design, construction, and operation of
+            CubeSats and other space-related engineering projects.
           </p>
           <div className="flex flex-row gap-8 items-start">
             <div className="flex flex-col gap-4">
@@ -108,7 +126,7 @@ export const Services = () => {
                 >
                   <Card>
                     <CardHeader className="space-y-1 flex md:flex-row justify-start items-start gap-2 max-h-[135px]">
-                      <div className="mt-1 bg-primary/20 p-1 rounded-2xl">
+                      <div className="mt-0.5 bg-primary/20 p-1.5 mr-2 rounded-2xl">
                         {icon}
                       </div>
                       <div>
@@ -126,12 +144,14 @@ export const Services = () => {
         </motion.div>
         <Canvas 
           className="hidden w-full max-w-[300px] md:min-w-[700px] lg:max-w-[700px] lg:block absolute top-[50px]"
-          camera={{ position: [110, 110, 140], fov: 50 }} // Initial position including rotation
+          camera={{ position: [110, 110, 140], fov: 50 }} // Initial camera position
         >
           <ambientLight intensity={0.5} />
           <directionalLight position={[10, 10, 10]} />
+          {/* Add an environment for realistic reflections */}
+          <Environment preset="studio" background={false} />
           <Suspense fallback={null}>
-            <Model grayscale={grayscale} />
+            <Model />
           </Suspense>
           <OrbitControls target={[0, 0, 0]} />
         </Canvas>
