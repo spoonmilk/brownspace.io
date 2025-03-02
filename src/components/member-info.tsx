@@ -2,7 +2,7 @@ import { TeamProps } from "./types/team"
 
 const teamList: TeamProps[] = [
     {
-        "imageUrl": "/kelly-lin.jpg",
+        "imageUrl": "member_images/kelly-lin.jpg",
         "name": "Kelly",
         "position": "",
         "subgroup": "Avionics",
@@ -14,7 +14,7 @@ const teamList: TeamProps[] = [
         ]
     },
     {
-        "imageUrl": "/tanish-makadia.jpeg",
+        "imageUrl": "member_images/tanish-makadia.jpeg",
         "name": "Tanish Makadia",
         "position": "Flight Software Lead",
         "subgroup": "Flight Software",
@@ -26,7 +26,7 @@ const teamList: TeamProps[] = [
         ]
     },
     {
-        "imageUrl": "/david-man.png",
+        "imageUrl": "member_images/david-man.png",
         "name": "David Man",
         "position": "",
         "subgroup": "ADCS",
@@ -38,7 +38,7 @@ const teamList: TeamProps[] = [
         ]
     },
     {
-        "imageUrl": "/carolyn-wu.jpg",
+        "imageUrl": "member_images/carolyn-wu.jpg",
         "name": "Carolyn Wu",
         "position": "",
         "subgroup": "Structures",
@@ -50,7 +50,7 @@ const teamList: TeamProps[] = [
         ]
     },
     {
-        "imageUrl": "/ignacio-blancas.jpeg",
+        "imageUrl": "member_images/ignacio-blancas.jpeg",
         "name": "Nacho",
         "position": "Incoming Co-Lead",
         "subgroup": "Flight Software",
