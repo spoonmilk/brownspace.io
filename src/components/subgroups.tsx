@@ -9,7 +9,7 @@ const Subgroup = ({ subgroupName, description }: { subgroupName: string; descrip
   const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0.5, 1, 0.5]);
 
   return (
-      <motion.div ref={ref} style={{ y, scale, opacity }} className="flex justify-center items-center bg-gray-600 p-4 rounded-lg shadow-lg mb-20 w-3/4 mx-auto">
+      <motion.div ref={ref} style={{ y, scale, opacity }} className="flex justify-center items-center bg-zinc-900 p-4 rounded-lg shadow-lg mb-20 w-3/4 mx-auto">
           <div className="text-center">
               <img src="/images/group3.jpg" alt={subgroupName} width={200} height={200} className="rounded-full mx-auto" />
               <h2 className="mt-4 text-xl font-semibold text-white pb-2">{subgroupName}</h2>

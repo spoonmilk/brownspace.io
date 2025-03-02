@@ -1,4 +1,4 @@
-       import { Card, CardHeader, CardContent, CardFooter } from "@/components/ui/card"  // Ensure Card component from Shadcn UI
+import { Card, CardHeader, CardContent, CardFooter } from "@/components/ui/card"  // Ensure Card component from Shadcn UI
 import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
 
@@ -39,6 +39,7 @@ export const Sponsors = () => {
   )
 }
 
+
 const SponsorCard = ({ tier, img, imgAlt, scale=1, desc }: {tier: string, img: string, imgAlt: string, scale?: number}) => {
   return (
     <motion.div
@@ -46,26 +47,23 @@ const SponsorCard = ({ tier, img, imgAlt, scale=1, desc }: {tier: string, img: s
         scale: 1.05,
         transition: { type: "spring", stiffness: 300 }
       }}
-      className="flex w-full items-center justify-center"
+      className="w-full h-full"
     >
-      <Card style={{height: "38vh"}} className="w-full max-w-xs border border-gray-200 bg-white shadow-lg rounded-lg overflow-hidden transition-colors hover:z-10 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 dark:border-gray-800 dark:bg-gray-950 dark:hover:z-10 dark:focus-visible:ring-gray-300 flex flex-col">
-        <CardHeader className="flex justify-center py-4 bg-gray-100 dark:bg-gray-900">
+      <Card className="w-full max-w-xs border shadow-lg rounded-lg overflow-hidden transition-colors hover:z-10 focus-visible:outline-none focus-visible:ring-1  dark:hover:z-10 dark:focus-visible:ring-gray-300 flex flex-col h-full">
+        <CardHeader className="flex justify-center py-4 bg-gray-100 dark:bg-zinc-900">
           <h2 className="text-xl font-semibold text-gray-900 dark:text-white text-center">{tier}</h2>
         </CardHeader>
-        <CardContent className="flex flex-1 justify-center p-0">
+        <CardContent className="flex flex-1 justify-center p-4">
           <img
             src={img}
             width="200"
-            // height="50"
             alt={imgAlt}
             className="object-contain object-center"
             style={{scale: `${scale}`}}
           />
-
-          
         </CardContent>
-        <CardFooter>
-        <p className="text-sm">{desc}</p>
+        <CardFooter className="flex flex-col items-center justify-end p-4">
+          <p className="text-sm text-center">{desc}</p>
         </CardFooter>
       </Card>
     </motion.div>
