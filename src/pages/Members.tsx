@@ -10,13 +10,16 @@ function Members() {
         <h2 className="text-3xl md:text-4xl font-bold text-center">
           Our Team
         </h2>
-        <Team subgroup="Avionics" />
-        <Team subgroup="Structures" />
-        <Team subgroup="Ground Software" />
-        <Team subgroup="Flight Software" />
-        <Team subgroup="R&D" />
+        <Team subgroup="Club Presidents" />
         <Team subgroup="ADCS" />
+        <Team subgroup="Avionics" />
+        <Team subgroup="Flight Software" />
+        <Team subgroup="Ground Software" />
         <Team subgroup="Operations" />
+        <Team subgroup="R&D" />
+        <Team subgroup="Structures" />
+        
+        
       </section>
       <div className="mt-12">
         <Footer />

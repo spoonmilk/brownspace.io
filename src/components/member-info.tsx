@@ -38,7 +38,7 @@ const teamList: TeamProps[] = [
         ]
     },
     {
-        "imageUrl": "member_images/carolyn-wu.jpg",
+        "imageUrl": "member_images/carolyn-wu.png",
         "name": "Carolyn Wu",
         "position": "",
         "subgroup": "Structures",
@@ -62,7 +62,7 @@ const teamList: TeamProps[] = [
         ]
     },
     {
-        "imageUrl": "https://drive.google.com/thumbnail?id=1dOvbgk6VPpqCIf4b_rTd5PFGDQlcjeR9",
+        "imageUrl": "member_images/maximilian-bean.png",
         "name": "Max Bean-Tierney",
         "position": "",
         "subgroup": "Structures",
@@ -74,7 +74,7 @@ const teamList: TeamProps[] = [
         ]
     },
     {
-        "imageUrl": "https://drive.google.com/thumbnail?id=1D_cDwia45Q7VUyy2dPqdbI5nCdl3ISRj",
+        "imageUrl": "member_images/zijian-she.jpg",
         "name": "Zijian She",
         "position": "",
         "subgroup": "Avionics",
@@ -86,7 +86,7 @@ const teamList: TeamProps[] = [
         ]
     },
     {
-        "imageUrl": "https://drive.google.com/thumbnail?id=151XZOveHmvCENcEoUxXmmNA4Z7RMx9-A",
+        "imageUrl": "member_images/alyson-jiang.png",
         "name": "Alyson Jiang",
         "position": "",
         "subgroup": "Avionics",
@@ -98,7 +98,7 @@ const teamList: TeamProps[] = [
         ]
     },
     {
-        "imageUrl": "https://drive.google.com/thumbnail?id=110I5L3yRzDY4Jr9OOYwTOKBxXKrplpoB",
+        "imageUrl": "member_images/alyson-jiang.png",
         "name": "Taohan Wang",
         "position": "Incoming ADCS Lead",
         "subgroup": "ADCS",
@@ -110,7 +110,7 @@ const teamList: TeamProps[] = [
         ]
     },
     {
-        "imageUrl": "https://drive.google.com/thumbnail?id=1EVDmRaTq4TJru9D4azdhvvzy3npR5b6O",
+        "imageUrl": "member_images/kevin-mc.jpeg",
         "name": "Kevin McGrath",
         "position": "",
         "subgroup": "Structures",
@@ -122,7 +122,7 @@ const teamList: TeamProps[] = [
         ]
     },
     {
-        "imageUrl": "https://drive.google.com/thumbnail?id=1Y8kDd2Pg37_c-k930eHiFs7jCy-XL9qD",
+        "imageUrl": "member_images/erik-duchnowski.jpg",
         "name": "Erik Duchnowski",
         "position": "",
         "subgroup": "Structures",
@@ -134,7 +134,7 @@ const teamList: TeamProps[] = [
         ]
     },
     {
-        "imageUrl": "https://drive.google.com/thumbnail?id=1lcE9EhU4ePux6YtbZjFHyOSbOI4bX2qO",
+        "imageUrl": "member_images/aidan-wang.jpg",
         "name": "Aidan Wang",
         "position": "",
         "subgroup": "Flight Software",
@@ -146,7 +146,7 @@ const teamList: TeamProps[] = [
         ]
     },
     {
-        "imageUrl": "https://drive.google.com/thumbnail?id=1oVsRHk4IjQks4DzQISacxTILabxOIEHe",
+        "imageUrl": "member_images/geoffrey-tillisch.jpg",
         "name": "Geoffrey Tillisch",
         "position": "",
         "subgroup": "Structures",
@@ -158,9 +158,9 @@ const teamList: TeamProps[] = [
         ]
     },
     {
-        "imageUrl": "https://drive.google.com/thumbnail?id=102AtPMf-l_2VC2d0ojjqHyyvmrEh9xgU",
+        "imageUrl": "member_images/nicole-marion.jpeg",
         "name": "Nicole Marion Villarroel ",
-        "position": "DEI lead",
+        "position": "DEI Lead",
         "subgroup": "Structures",
         "socialNetworks": [
             {
@@ -170,9 +170,9 @@ const teamList: TeamProps[] = [
         ]
     },
     {
-        "imageUrl": "https://drive.google.com/thumbnail?id=102AtPMf-l_2VC2d0ojjqHyyvmrEh9xgU",
+        "imageUrl": "member_images/nicole-marion.jpeg",
         "name": "Nicole Marion Villarroel ",
-        "position": "DEI lead",
+        "position": "DEI Lead",
         "subgroup": "R&D",
         "socialNetworks": [
             {
@@ -182,9 +182,9 @@ const teamList: TeamProps[] = [
         ]
     },
     {
-        "imageUrl": "https://drive.google.com/thumbnail?id=102AtPMf-l_2VC2d0ojjqHyyvmrEh9xgU",
+        "imageUrl": "member_images/nicole-marion.jpeg",
         "name": "Nicole Marion Villarroel ",
-        "position": "DEI lead",
+        "position": "DEI Lead",
         "subgroup": "Operations",
         "socialNetworks": [
             {
@@ -194,8 +194,8 @@ const teamList: TeamProps[] = [
         ]
     },
     {
-        "imageUrl": "https://drive.google.com/thumbnail?id=17jbFvQn9tg4ar2p1ht0vUgCGxwNqM3C_",
-        "name": "Alex",
+        "imageUrl": "member_images/alex-wang.jpeg",
+        "name": "Alex Wang",
         "position": "",
         "subgroup": "Structures",
         "socialNetworks": [
@@ -206,7 +206,7 @@ const teamList: TeamProps[] = [
         ]
     },
     {
-        "imageUrl": "https://drive.google.com/thumbnail?id=1EJSxUDU1Ig_d-WqfRWOrFZMD-R69XjtB",
+        "imageUrl": "member_images/zach-chinnery.JPG",
         "name": "Zach Chinnery",
         "position": "Structures Lead",
         "subgroup": "Structures",
@@ -218,7 +218,7 @@ const teamList: TeamProps[] = [
         ]
     },
     {
-        "imageUrl": "https://drive.google.com/thumbnail?id=1n6_GyJo7v8xGQcOPV6jqV2yjGqs9Lb7f",
+        "imageUrl": "member_images/loang-chiang.jpeg",
         "name": "Loang Chiang",
         "position": "",
         "subgroup": "Ground Software",
@@ -230,7 +230,7 @@ const teamList: TeamProps[] = [
         ]
     },
     {
-        "imageUrl": "https://drive.google.com/thumbnail?id=1n6_GyJo7v8xGQcOPV6jqV2yjGqs9Lb7f",
+        "imageUrl": "member_images/loang-chiang.jpeg",
         "name": "Loang Chiang",
         "position": "",
         "subgroup": "Operations",
@@ -242,8 +242,8 @@ const teamList: TeamProps[] = [
         ]
     },
     {
-        "imageUrl": "https://drive.google.com/thumbnail?id=1omign5Yfhd8kriwj4fxZ4giAX-InjbYb",
-        "name": "Aryan ",
+        "imageUrl": "member_images/aryan-prasad.JPG",
+        "name": "Aryan Prasad",
         "position": "",
         "subgroup": "Structures",
         "socialNetworks": [
@@ -254,7 +254,7 @@ const teamList: TeamProps[] = [
         ]
     },
     {
-        "imageUrl": "https://drive.google.com/thumbnail?id=1LImwOIIOi-quOtHYO4Xjouo4v5UPzC6Z",
+        "imageUrl": "member_images/aanya-k-agrawal.png",
         "name": "Aanya Kaur Agrawal",
         "position": "Operations Lead",
         "subgroup": "Ground Software",
@@ -266,7 +266,7 @@ const teamList: TeamProps[] = [
         ]
     },
     {
-        "imageUrl": "https://drive.google.com/thumbnail?id=1LImwOIIOi-quOtHYO4Xjouo4v5UPzC6Z",
+        "imageUrl": "member_images/aanya-k-agrawal.png",
         "name": "Aanya Kaur Agrawal",
         "position": "Operations Lead",
         "subgroup": "Operations",
@@ -278,9 +278,9 @@ const teamList: TeamProps[] = [
         ]
     },
     {
-        "imageUrl": "https://drive.google.com/thumbnail?id=1x9mww3oTaU4THz6knKMKqTva-F3rvdiS",
+        "imageUrl": "member_images/graham-neely.png",
         "name": "Graham Neely",
-        "position": "R & D Subgroup Lead",
+        "position": "R&D Subgroup Lead",
         "subgroup": "R&D",
         "socialNetworks": [
             {
@@ -290,7 +290,7 @@ const teamList: TeamProps[] = [
         ]
     },
     {
-        "imageUrl": "https://drive.google.com/thumbnail?id=1p2B6zixkDmdMuU9uVyKEVV9pEFgQJvEz",
+        "imageUrl": "member_images/saswata-majumder.jpg",
         "name": "Saswata Majumder",
         "position": "",
         "subgroup": "Flight Software",
@@ -302,7 +302,7 @@ const teamList: TeamProps[] = [
         ]
     },
     {
-        "imageUrl": "https://drive.google.com/thumbnail?id=1-iD_1i9YfFCxqPanNw4wC7KTgbW9psZ1",
+        "imageUrl": "member_images/mohammad-ariesh.jpeg",
         "name": "Mohammad Ariesh Qanit",
         "position": "",
         "subgroup": "Structures",
@@ -314,9 +314,9 @@ const teamList: TeamProps[] = [
         ]
     },
     {
-        "imageUrl": "https://drive.google.com/thumbnail?id=1EgzxNHqM69xzPjf1_Mu4OSwP8qKgVBZy",
+        "imageUrl": "member_images/anna-ivanov.JPG",
         "name": "Anna Ivanov",
-        "position": "Robotics Co-lead",
+        "position": "Robotics Co-Lead",
         "subgroup": "Structures",
         "socialNetworks": [
             {
@@ -326,7 +326,7 @@ const teamList: TeamProps[] = [
         ]
     },
     {
-        "imageUrl": "https://drive.google.com/thumbnail?id=14co8KK7Oucf5HLWPZs6vrDnbq4hhZy-B",
+        "imageUrl": "member_images/gabriel-chen.jpg",
         "name": "Gabe Chen",
         "position": "",
         "subgroup": "Ground Software",
@@ -338,7 +338,7 @@ const teamList: TeamProps[] = [
         ]
     },
     {
-        "imageUrl": "https://drive.google.com/thumbnail?id=1PTHRV3QmctNDQprjvASqOEb2XyEBWnkH",
+        "imageUrl": "member_images/daniel-vilker.jpeg",
         "name": "Daniel Vilker",
         "position": "",
         "subgroup": "Structures",
@@ -350,7 +350,7 @@ const teamList: TeamProps[] = [
         ]
     },
     {
-        "imageUrl": "https://drive.google.com/thumbnail?id=1waw3sQk-6P7v4iIc_oHu7443X2NDmOJH",
+        "imageUrl": "member_images/annika-baking.jpg",
         "name": "Annika Baking",
         "position": "",
         "subgroup": "Avionics",
@@ -362,7 +362,7 @@ const teamList: TeamProps[] = [
         ]
     },
     {
-        "imageUrl": "https://drive.google.com/thumbnail?id=1n1A6Hf9Qxle2xVpLLgMv1Sb3RG9xzT_M",
+        "imageUrl": "member_images/brandon-kim.png",
         "name": "Brandon Kim",
         "position": "",
         "subgroup": "ADCS",
@@ -374,7 +374,7 @@ const teamList: TeamProps[] = [
         ]
     },
     {
-        "imageUrl": "https://drive.google.com/thumbnail?id=1xSMcB6SMWx4t4k6zQaJRO7oWdAdptnPA",
+        "imageUrl": "member_images/evan-luo.png",
         "name": "Evan Luo",
         "position": "",
         "subgroup": "Flight Software",
@@ -387,9 +387,9 @@ const teamList: TeamProps[] = [
     },
 
     {
-        "imageUrl": "https://drive.google.com/thumbnail?id=10qzrWEBeqHxRP2VZBl4_KCgbB_u2t4tb",
+        "imageUrl": "member_images/milan-capoor.jpeg",
         "name": "Milan Capoor",
-        "position": "ADCS Co-lead, Incoming Technical Lead (Co-President)",
+        "position": "ADCS Co-Lead, Incoming Technical Lead (Co-President)",
         "subgroup": "ADCS",
         "socialNetworks": [
             {
@@ -399,7 +399,19 @@ const teamList: TeamProps[] = [
         ]
     },
     {
-        "imageUrl": "https://drive.google.com/thumbnail?id=1IwAl5vHeOVeS3ki09lKX-a6y43vXLqTn",
+        "imageUrl": "member_images/milan-capoor.jpeg",
+        "name": "Milan Capoor",
+        "position": "ADCS Co-Lead, Incoming Technical Lead (Co-President)",
+        "subgroup": "Club Presidents",
+        "socialNetworks": [
+            {
+                "name": "Linkedin",
+                "url": "https://www.linkedin.com/in/milan-capoor-559835243"
+            }
+        ]
+    },
+    {
+        "imageUrl": "member_images/shayaan-chaudhary.jpeg",
         "name": "Shayaan Chaudhary",
         "position": "",
         "subgroup": "Avionics",
@@ -411,7 +423,7 @@ const teamList: TeamProps[] = [
         ]
     },
     {
-        "imageUrl": "https://drive.google.com/thumbnail?id=1lhDJNCUcMcIuWDF0Vu5LzQAx5xHXq37p",
+        "imageUrl": "member_images/natalie-cavallo.jpg",
         "name": "Natalie Cavallo",
         "position": "Incoming Avionics Lead ",
         "subgroup": "Avionics",
@@ -423,7 +435,7 @@ const teamList: TeamProps[] = [
         ]
     },
     {
-        "imageUrl": "https://drive.google.com/thumbnail?id=1ee8gmyWp6fXamOYSzloSayWKRAPOpRdz",
+        "imageUrl": "member_images/praveen-prabaharan.jpeg",
         "name": "Praveen Prabaharan",
         "position": "",
         "subgroup": "Ground Software",
@@ -435,7 +447,7 @@ const teamList: TeamProps[] = [
         ]
     },
     {
-        "imageUrl": "https://drive.google.com/thumbnail?id=17Ux-vlXhOBTnbn1Vc7XwKRWsTsIP4d2b",
+        "imageUrl": "member_images/veronika-grytsai.jpg",
         "name": "Veronika Grytsai",
         "position": "Outgoing Co-Lead",
         "subgroup": "Ground Software",
@@ -447,7 +459,7 @@ const teamList: TeamProps[] = [
         ]
     },
     {
-        "imageUrl": "https://drive.google.com/thumbnail?id=1GOogIkabfCbwNFSB_bUP_7zWdED9FAeo",
+        "imageUrl": "member_images/ethan-kim.jpg",
         "name": "Ethan Kim",
         "position": "",
         "subgroup": "Structures",
@@ -459,7 +471,7 @@ const teamList: TeamProps[] = [
         ]
     },
     {
-        "imageUrl": "https://drive.google.com/thumbnail?id=1gnSoU03FPEG05Pgh7HlUzOz0I9M0-dQw",
+        "imageUrl": "member_images/milo-akerman.jpg",
         "name": "Milo Akerman",
         "position": "",
         "subgroup": "Avionics",
@@ -471,7 +483,7 @@ const teamList: TeamProps[] = [
         ]
     },
     {
-        "imageUrl": "https://drive.google.com/thumbnail?id=1L9YE-iCyRe3-trH377IMjzaLxifknLfW",
+        "imageUrl": "member_images/constantinos-krenteras.jpeg",
         "name": "Constantine Krenteras",
         "position": "",
         "subgroup": "Avionics",
@@ -483,7 +495,7 @@ const teamList: TeamProps[] = [
         ]
     },
     {
-        "imageUrl": "https://drive.google.com/thumbnail?id=16Vr3KwMrKUPHnY1lh2Oy6Urx2hYqaRD3",
+        "imageUrl": "member_images/alexander-khosrowshahi.png",
         "name": "Alex Khosrowshahi",
         "position": "Ground Software Co-Lead, Incoming Project Manager (Co-President)",
         "subgroup": "Ground Software",
@@ -495,7 +507,7 @@ const teamList: TeamProps[] = [
         ]
     },
     {
-        "imageUrl": "https://drive.google.com/thumbnail?id=16Vr3KwMrKUPHnY1lh2Oy6Urx2hYqaRD3",
+        "imageUrl": "member_images/alexander-khosrowshahi.png",
         "name": "Alex Khosrowshahi",
         "position": "Ground Software Co-Lead, Incoming Project Manager (Co-President)",
         "subgroup": "Flight Software",
@@ -507,9 +519,21 @@ const teamList: TeamProps[] = [
         ]
     },
     {
-        "imageUrl": "https://drive.google.com/thumbnail?id=16o-jCGEhyRESZ2JsUKvZNWqWZgTpu5JZ",
+        "imageUrl": "member_images/alexander-khosrowshahi.png",
+        "name": "Alex Khosrowshahi",
+        "position": "Ground Software Co-Lead, Incoming Project Manager (Co-President)",
+        "subgroup": "Club Presidents",
+        "socialNetworks": [
+            {
+                "name": "Linkedin",
+                "url": "https://www.linkedin.com/in/alexander-khosrowshahi-17a909298/"
+            }
+        ]
+    },
+    {
+        "imageUrl": "member_images/chandler-stevenson.png",
         "name": "Chandler Stevenson",
-        "position": "Technical Lead (Co-President), Outgoing Avionics Lead",
+        "position": "Outgoing Technical Lead (Co-President), Outgoing Avionics Lead",
         "subgroup": "Avionics",
         "socialNetworks": [
             {
@@ -519,10 +543,22 @@ const teamList: TeamProps[] = [
         ]
     },
     {
-        "imageUrl": "https://drive.google.com/thumbnail?id=1tF3i7UaA13PaBtysB-1SJY9zyK-8reMy",
+        "imageUrl": "member_images/chandler-stevenson.png",
+        "name": "Chandler Stevenson",
+        "position": "Outgoing Technical Lead (Co-President), Outgoing Avionics Lead",
+        "subgroup": "Club Presidents",
+        "socialNetworks": [
+            {
+                "name": "Linkedin",
+                "url": "https://www.linkedin.com/in/chandler-stevenson-717436202/"
+            }
+        ]
+    },
+    {
+        "imageUrl": "member_images/jingbang-zhu.jpg",
         "name": "JB Zhu",
-        "position": "Project Manager (Co-President) Note: not in any subgroup",
-        "subgroup": "Structures",
+        "position": "Outgoing Project Manager (Co-President)",
+        "subgroup": "Club Presidents",
         "socialNetworks": [
             {
                 "name": "Linkedin",
@@ -531,7 +567,7 @@ const teamList: TeamProps[] = [
         ]
     },
     {
-        "imageUrl": "https://drive.google.com/thumbnail?id=1H5Z6yknQCgTRuXwQyOpzwYwwGAc6uLpO",
+        "imageUrl": "member_images/siddharta-laloux.jpg",
         "name": "Siddharta Laloux",
         "position": "Treasurer",
         "subgroup": "Flight Software",
@@ -543,7 +579,7 @@ const teamList: TeamProps[] = [
         ]
     },
     {
-        "imageUrl": "https://drive.google.com/thumbnail?id=1H5Z6yknQCgTRuXwQyOpzwYwwGAc6uLpO",
+        "imageUrl": "member_images/siddharta-laloux.jpg",
         "name": "Siddharta Laloux",
         "position": "Treasurer",
         "subgroup": "Operations",
@@ -555,7 +591,7 @@ const teamList: TeamProps[] = [
         ]
     },
     {
-        "imageUrl": "https://drive.google.com/thumbnail?id=1hTEp9vF7cpsAEW7p_-C4yR3YaDCAq4d_",
+        "imageUrl": "member_images/geoffrey-tillisch.jpg",
         "name": "Geoffrey Tillisch",
         "position": "",
         "subgroup": "Structures",
@@ -567,7 +603,7 @@ const teamList: TeamProps[] = [
         ]
     },
     {
-        "imageUrl": "https://drive.google.com/thumbnail?id=1SHWeH1XnI5xAiid7CdhA8NAT6RX_1a0H",
+        "imageUrl": "member_images/jonah-lee.jpg",
         "name": "Jonah Lee",
         "position": "",
         "subgroup": "Avionics",
@@ -579,7 +615,7 @@ const teamList: TeamProps[] = [
         ]
     },
     {
-        "imageUrl": "https://drive.google.com/thumbnail?id=1qIp1yox8R8CCY7ORrmARgEBlmyncL3-k",
+        "imageUrl": "member_images/emily-chukoskie.png",
         "name": "Emily Chukoskie",
         "position": "",
         "subgroup": "Structures",
@@ -591,7 +627,7 @@ const teamList: TeamProps[] = [
         ]
     },
     {
-        "imageUrl": "https://drive.google.com/thumbnail?id=1A4sILccJB-g20X8CwsY-4Cb5r5Q8Wa2W",
+        "imageUrl": "member_images/arjun-bacigalupi.jpg",
         "name": "Arjun Bacigalupi ",
         "position": "",
         "subgroup": "Structures",
@@ -603,9 +639,9 @@ const teamList: TeamProps[] = [
         ]
     },
     {
-        "imageUrl": "https://drive.google.com/thumbnail?id=1qmj2HCPrNpQMtjq32AIzeCj2TZ0AmZZU",
+        "imageUrl": "member_images/yi-lyo.png",
         "name": "Yi Lyo",
-        "position": "Flight Software Co-lead",
+        "position": "Flight Software Co-Lead",
         "subgroup": "Flight Software",
         "socialNetworks": [
             {
@@ -615,7 +651,7 @@ const teamList: TeamProps[] = [
         ]
     },
     {
-        "imageUrl": "https://drive.google.com/thumbnail?id=1tpzTdXt2znPCdFV2gKfglDygREl30lPd",
+        "imageUrl": "member_images/ash-lassonde.jpeg",
         "name": "Ash Lassonde",
         "position": "",
         "subgroup": "ADCS",
@@ -627,10 +663,227 @@ const teamList: TeamProps[] = [
         ]
     },
     {
-        "imageUrl": "https://drive.google.com/thumbnail?id=1Uq6wL7TUqy6oE8SIkyL2dF4STCvUS_A2",
+        "imageUrl": "member_images/alexander-aoki.jpeg",
         "name": "Alex Aoki",
         "position": "",
         "subgroup": "ADCS",
+        "socialNetworks": [
+            {
+                "name": "Linkedin",
+                "url": ""
+            }
+        ]
+    },
+
+    {
+        "imageUrl": "member_images/Joseph Quinton.jpeg",
+        "name": "Joseph Quinton",
+        "position": "",
+        "subgroup": "Structures",
+        "socialNetworks": [
+            {
+                "name": "Linkedin",
+                "url": ""
+            }
+        ]
+    },
+    {
+        "imageUrl": "member_images/Refath Bari.jpeg",
+        "name": "Ref Bari",
+        "position": "",
+        "subgroup": "R&D",
+        "socialNetworks": [
+            {
+                "name": "Linkedin",
+                "url": "https://www.linkedin.com/in/refathbari"
+            }
+        ]
+    },
+    {
+        "imageUrl": "member_images/Brandon Montoya.jpg",
+        "name": "Brandon Montoya",
+        "position": "",
+        "subgroup": "Ground Software, Operations",
+        "socialNetworks": [
+            {
+                "name": "Linkedin",
+                "url": "https://www.linkedin.com/in/brandon-montoya-a6a3a029b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+            }
+        ]
+    },
+    {
+        "imageUrl": "member_images/Liam Haghpassand.JPG",
+        "name": "Liam Haghpassand",
+        "position": "",
+        "subgroup": "Structures",
+        "socialNetworks": [
+            {
+                "name": "Linkedin",
+                "url": ""
+            }
+        ]
+    },
+    {
+        "imageUrl": "member_images/Sophia Wang.png",
+        "name": "Sophia Wang",
+        "position": "",
+        "subgroup": "Operations",
+        "socialNetworks": [
+            {
+                "name": "Linkedin",
+                "url": "https://www.linkedin.com/in/sophia-wang-469417317/"
+            }
+        ]
+    },
+    {
+        "imageUrl": "member_images/Cavin Xue.jpg",
+        "name": "Cavin Xue",
+        "position": "",
+        "subgroup": "Operations",
+        "socialNetworks": [
+            {
+                "name": "Linkedin",
+                "url": ""
+            }
+        ]
+    },
+    {
+        "imageUrl": "member_images/Jose Sandoval.JPEG",
+        "name": "Jose",
+        "position": "",
+        "subgroup": "Avionics, Ground Software",
+        "socialNetworks": [
+            {
+                "name": "Linkedin",
+                "url": "https://www.linkedin.com/in/jose-sandoval-abc"
+            }
+        ]
+    },
+    {
+        "imageUrl": "member_images/Daniel North.jpg",
+        "name": "Dan North",
+        "position": "",
+        "subgroup": "Structures",
+        "socialNetworks": [
+            {
+                "name": "Linkedin",
+                "url": "https://www.linkedin.com/in/daniel-rodney-aaron-north/"
+            }
+        ]
+    },
+    {
+        "imageUrl": "member_images/Jason Wu.jpg",
+        "name": "Jason Wu",
+        "position": "",
+        "subgroup": "ADCS",
+        "socialNetworks": [
+            {
+                "name": "Linkedin",
+                "url": "https://www.linkedin.com/in/jason-wu-5b4884248"
+            }
+        ]
+    },
+    {
+        "imageUrl": "member_images/Vivek Nagarajan.jpg",
+        "name": "Vivek Nagarajan",
+        "position": "Incoming Ground Software Co-Lead",
+        "subgroup": "Ground Software",
+        "socialNetworks": [
+            {
+                "name": "Linkedin",
+                "url": "https://www.linkedin.com/in/vivek-nagarajan-79a873247/"
+            }
+        ]
+    },
+    {
+        "imageUrl": "member_images/Katelyn Guo.jpeg",
+        "name": "Katelyn Guo",
+        "position": "",
+        "subgroup": "Structures",
+        "socialNetworks": [
+            {
+                "name": "Linkedin",
+                "url": "linkedIn.com/in/katelyn-guo-416958244/"
+            }
+        ]
+    },
+    {
+        "imageUrl": "member_images/Dean Zweiman.jpeg",
+        "name": "Dean Zweiman",
+        "position": "",
+        "subgroup": "Structures",
+        "socialNetworks": [
+            {
+                "name": "Linkedin",
+                "url": ""
+            }
+        ]
+    },
+    {
+        "imageUrl": "member_images/Yuyuan Huang.png",
+        "name": "Yuyuan Huang",
+        "position": "Robotics Co-Lead",
+        "subgroup": "R&D",
+        "socialNetworks": [
+            {
+                "name": "Linkedin",
+                "url": ""
+            }
+        ]
+    },
+    {
+        "imageUrl": "member_images/Eli Williams.jpeg",
+        "name": "Eli Williams",
+        "position": "Not subgroup lead but an also in robotics subgroup!",
+        "subgroup": "Structures, Operations",
+        "socialNetworks": [
+            {
+                "name": "Linkedin",
+                "url": "https://www.linkedin.com/in/eli-w-a4652b231?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+            }
+        ]
+    },
+    {
+        "imageUrl": "member_images/Ellen Zhang.jpeg",
+        "name": "Ellen Zhang",
+        "position": "",
+        "subgroup": "Avionics, Operations",
+        "socialNetworks": [
+            {
+                "name": "Linkedin",
+                "url": "https://www.linkedin.com/in/ellen-zhang-ba6901345?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+            }
+        ]
+    },
+    {
+        "imageUrl": "member_images/Mary O_Riordan.png",
+        "name": "Mary O'Riordan",
+        "position": "",
+        "subgroup": "Avionics",
+        "socialNetworks": [
+            {
+                "name": "Linkedin",
+                "url": "www.linkedin.com/in/mary-o-riordan-6919422b1"
+            }
+        ]
+    },
+    {
+        "imageUrl": "member_images/Arjun Nagamangalam.jpeg",
+        "name": "Arjun Nagamangalam",
+        "position": "",
+        "subgroup": "ADCS",
+        "socialNetworks": [
+            {
+                "name": "Linkedin",
+                "url": "http://linkedin.com/in/arjun-nagamangalam"
+            }
+        ]
+    },
+    {
+        "imageUrl": "member_images/Philip Dackiw.png",
+        "name": "Philip",
+        "position": "",
+        "subgroup": "Avionics",
         "socialNetworks": [
             {
                 "name": "Linkedin",
