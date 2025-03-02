@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState, Suspense } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { OrbitControls, useGLTF } from "@react-three/drei";
+import { OrbitControls, useGLTF, Environment } from "@react-three/drei";
 import { motion, useAnimation, useInView } from "framer-motion";
 import { Card, CardDescription, CardHeader, CardTitle } from "./ui/card";
 import open_source from "../assets/open-source.svg";
@@ -34,14 +34,26 @@ const serviceList: ServiceProps[] = [
   },
 ];
 
-function Model({ grayscale }: { grayscale: boolean }) {
+function Model() {
   const { scene } = useGLTF("/pvdsmall.glb"); // Replace with your GLTF model path
   const ref = useRef<any>();
+
+  // Update materials to have a metallic texture
+  useEffect(() => {
+    scene.traverse((child) => {
+      if ((child as any).isMesh && (child as any).material) {
+        const material = (child as any).material;
+        material.metalness = 1;      // Increase metalness for a shiny look
+        material.roughness = 0.2;      // Lower roughness for smoother reflections
+        material.needsUpdate = true;
+      }
+    });
+  }, [scene]);
 
   // Rotate the model slightly on the Y-axis
   useFrame(() => {
     if (ref.current) {
-      ref.current.rotation.y += 0.01; // Adjust the speed of rotation
+      ref.current.rotation.y += 0.01; // Adjust the speed of rotation as needed
     }
   });
 
@@ -129,12 +141,14 @@ export const Services = () => {
         </motion.div>
         <Canvas 
           className="hidden w-full max-w-[300px] md:min-w-[700px] lg:max-w-[700px] lg:block absolute top-[50px]"
-          camera={{ position: [110, 110, 140], fov: 50 }} // Initial position including rotation
+          camera={{ position: [110, 110, 140], fov: 50 }} // Initial camera position
         >
           <ambientLight intensity={0.5} />
           <directionalLight position={[10, 10, 10]} />
+          {/* Add an environment for realistic reflections */}
+          <Environment preset="studio" background={false} />
           <Suspense fallback={null}>
-            <Model grayscale={grayscale} />
+            <Model />
           </Suspense>
           <OrbitControls target={[0, 0, 0]} />
         </Canvas>
