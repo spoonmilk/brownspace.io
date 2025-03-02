@@ -385,18 +385,7 @@ const teamList: TeamProps[] = [
             }
         ]
     },
-    {
-        "imageUrl": "https://drive.google.com/thumbnail?id=1R5ih4XKdvwCl3KcQ4iDhh9AHabPiXnbo",
-        "name": "Yi",
-        "position": "Co-lead",
-        "subgroup": "Flight Software",
-        "socialNetworks": [
-            {
-                "name": "Linkedin",
-                "url": ""
-            }
-        ]
-    },
+
     {
         "imageUrl": "https://drive.google.com/thumbnail?id=10qzrWEBeqHxRP2VZBl4_KCgbB_u2t4tb",
         "name": "Milan Capoor",
@@ -496,7 +485,7 @@ const teamList: TeamProps[] = [
     {
         "imageUrl": "https://drive.google.com/thumbnail?id=16Vr3KwMrKUPHnY1lh2Oy6Urx2hYqaRD3",
         "name": "Alex Khosrowshahi",
-        "position": "Ground Software Lead, Incoming Project Manager (Co-President)",
+        "position": "Ground Software Co-Lead, Incoming Project Manager (Co-President)",
         "subgroup": "Ground Software",
         "socialNetworks": [
             {
@@ -508,7 +497,7 @@ const teamList: TeamProps[] = [
     {
         "imageUrl": "https://drive.google.com/thumbnail?id=16Vr3KwMrKUPHnY1lh2Oy6Urx2hYqaRD3",
         "name": "Alex Khosrowshahi",
-        "position": "Ground Software Lead, Incoming Project Manager (Co-President)",
+        "position": "Ground Software Co-Lead, Incoming Project Manager (Co-President)",
         "subgroup": "Flight Software",
         "socialNetworks": [
             {
@@ -574,18 +563,6 @@ const teamList: TeamProps[] = [
             {
                 "name": "Linkedin",
                 "url": "www.linkedin.com/in/geoffrey-tillisch-7b3a08294"
-            }
-        ]
-    },
-    {
-        "imageUrl": "https://drive.google.com/thumbnail?id=1f4NPtQQDJdIEa8tZB3Gb-vflag4faMsX",
-        "name": "Yi",
-        "position": "Co-lead",
-        "subgroup": "Flight Software",
-        "socialNetworks": [
-            {
-                "name": "Linkedin",
-                "url": ""
             }
         ]
     },

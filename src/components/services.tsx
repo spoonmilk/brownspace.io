@@ -35,25 +35,23 @@ const serviceList: ServiceProps[] = [
 ];
 
 function Model() {
-  const { scene } = useGLTF("/pvdsmall.glb"); // Replace with your GLTF model path
+  const { scene } = useGLTF("/pvdsmall.glb"); 
   const ref = useRef<any>();
 
-  // Update materials to have a metallic texture
   useEffect(() => {
     scene.traverse((child) => {
       if ((child as any).isMesh && (child as any).material) {
         const material = (child as any).material;
-        material.metalness = 1;      // Increase metalness for a shiny look
-        material.roughness = 0.2;      // Lower roughness for smoother reflections
+        material.metalness = 0.8;
+        material.roughness = 0.4;
         material.needsUpdate = true;
       }
     });
   }, [scene]);
 
-  // Rotate the model slightly on the Y-axis
   useFrame(() => {
     if (ref.current) {
-      ref.current.rotation.y += 0.01; // Adjust the speed of rotation as needed
+      ref.current.rotation.y += 0.01; 
     }
   });
 
@@ -63,6 +61,7 @@ function Model() {
       ref={ref}
       scale={300}
       position={[0, 0, 0]}
+      rotation={[0, 0, 0]}
     />
   );
 }
@@ -103,9 +102,9 @@ export const Services = () => {
           <h2 className="text-3xl md:text-4xl font-bold">
             Brown University's Largest Undergraduate Engineering Club
           </h2>
-          <p className="text-muted-foreground text-xl mt-4 mb-8">
+          <p className="text-muted-foreground text-xl mt-4 mb-8 padding-bottom-8">
             Brown Space Engineering is a student-run spaceflight engineering club committed to a philosophy
-            of accessibility, inclusion, and do-it-yourself engineering. The largest engineering club at Brown, BSE involves
+            of accessibility, inclusion, do-it-yourself learning. The largest engineering club at Brown, BSE involves
             students of all disciplines, experience levels, and backgrounds in the design, construction, and operation of
             CubeSats and other space-related engineering projects.
           </p>
@@ -144,7 +143,7 @@ export const Services = () => {
         </motion.div>
         <Canvas 
           className="hidden w-full max-w-[300px] md:min-w-[700px] lg:max-w-[700px] lg:block absolute top-[50px]"
-          camera={{ position: [110, 110, 140], fov: 50 }} // Initial camera position
+          camera={{ position: [110, 110, 120], fov: 50 }} // Initial camera position
         >
           <ambientLight intensity={0.5} />
           <directionalLight position={[10, 10, 10]} />

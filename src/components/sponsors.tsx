@@ -10,7 +10,7 @@ export const Sponsors = () => {
           <div className="space-y-3 text-center">
             <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Our Sponsors</h1>
             <p className="mx-auto max-w-3xl text-gray-500 md:text-xl/relaxed dark:text-gray-400">
-              We are very grateful to everyone who funds and supports Brown Space Engineering.
+              Thank you to our sponsors, who enable us to continue making space accessible.
             </p>
           </div>
         </div>
