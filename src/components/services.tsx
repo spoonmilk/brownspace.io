@@ -3,6 +3,9 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
 import { motion, useAnimation, useInView } from "framer-motion";
 import { Card, CardDescription, CardHeader, CardTitle } from "./ui/card";
+import open_source from "../assets/open-source.svg";
+import collaborative from "../assets/collaborative.svg";
+import cutting_edge from "../assets/cutting-edge.svg";
 
 interface ServiceProps {
   title: string;
@@ -12,22 +15,22 @@ interface ServiceProps {
 
 const serviceList: ServiceProps[] = [
   {
-    title: "Open Source",
+    title: "Open Source", 
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi nesciunt est nostrum omnis ab sapiente.",
-    icon: <img src="/cost.png" className="w-[50px] h-auto opacity" />,
+    icon: <img src={ open_source } className="w-[25px] h-auto opacity dark:invert" />,
   },
   {
     title: "Collaborative",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi nesciunt est nostrum omnis ab sapiente.",
-    icon: <img src="/team.png" className="w-[50px] h-auto" />,
+    icon: <img src={ collaborative } className="w-[30px] h-auto dark:invert" />,
   },
   {
     title: "Cutting Edge",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi nesciunt est nostrum omnis ab sapiente.",
-    icon: <img src="/cutting-edge.png" className="w-[50px] h-auto" />,
+    icon: <img src={ cutting_edge } className="w-[30px] h-auto dark:invert" />,
   },
 ];
 
@@ -108,7 +111,7 @@ export const Services = () => {
                 >
                   <Card>
                     <CardHeader className="space-y-1 flex md:flex-row justify-start items-start gap-2 max-h-[135px]">
-                      <div className="mt-1 bg-primary/20 p-1 rounded-2xl">
+                      <div className="mt-0.5 bg-primary/20 p-1.5 mr-2 rounded-2xl">
                         {icon}
                       </div>
                       <div>
