@@ -400,7 +400,7 @@ const teamList: TeamProps[] = [
     {
         "imageUrl": "https://drive.google.com/thumbnail?id=10qzrWEBeqHxRP2VZBl4_KCgbB_u2t4tb",
         "name": "Milan Capoor",
-        "position": "ADCS Co-lead, Incoming Tech lead",
+        "position": "ADCS Co-lead, Incoming Technical Lead (Co-President)",
         "subgroup": "ADCS",
         "socialNetworks": [
             {
@@ -496,8 +496,20 @@ const teamList: TeamProps[] = [
     {
         "imageUrl": "https://drive.google.com/thumbnail?id=16Vr3KwMrKUPHnY1lh2Oy6Urx2hYqaRD3",
         "name": "Alex Khosrowshahi",
-        "position": "Incoming Project Manager (Co-President), Ground Software Lead",
+        "position": "Ground Software Lead, Incoming Project Manager (Co-President)",
         "subgroup": "Ground Software",
+        "socialNetworks": [
+            {
+                "name": "Linkedin",
+                "url": "https://www.linkedin.com/in/alexander-khosrowshahi-17a909298/"
+            }
+        ]
+    },
+    {
+        "imageUrl": "https://drive.google.com/thumbnail?id=16Vr3KwMrKUPHnY1lh2Oy6Urx2hYqaRD3",
+        "name": "Alex Khosrowshahi",
+        "position": "Ground Software Lead, Incoming Project Manager (Co-President)",
+        "subgroup": "Flight Software",
         "socialNetworks": [
             {
                 "name": "Linkedin",
@@ -508,7 +520,7 @@ const teamList: TeamProps[] = [
     {
         "imageUrl": "https://drive.google.com/thumbnail?id=16o-jCGEhyRESZ2JsUKvZNWqWZgTpu5JZ",
         "name": "Chandler Stevenson",
-        "position": "Technical Lead, Outgoing Avionics Lead",
+        "position": "Technical Lead (Co-President), Outgoing Avionics Lead",
         "subgroup": "Avionics",
         "socialNetworks": [
             {
@@ -616,7 +628,7 @@ const teamList: TeamProps[] = [
     {
         "imageUrl": "https://drive.google.com/thumbnail?id=1qmj2HCPrNpQMtjq32AIzeCj2TZ0AmZZU",
         "name": "Yi Lyo",
-        "position": "Co-lead",
+        "position": "Flight Software Co-lead",
         "subgroup": "Flight Software",
         "socialNetworks": [
             {

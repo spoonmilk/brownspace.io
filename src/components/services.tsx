@@ -17,19 +17,19 @@ const serviceList: ServiceProps[] = [
   {
     title: "Open Source", 
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi nesciunt est nostrum omnis ab sapiente.",
+      "BSE is committed to making space accessible, with all of our projects being open source and available to the public.",
     icon: <img src={ open_source } className="w-[25px] h-auto opacity dark:invert" />,
   },
   {
     title: "Collaborative",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi nesciunt est nostrum omnis ab sapiente.",
+      "Our subgroups are comprised of students from all disciplines and experience levels, united under a passion for spaceflight.",
     icon: <img src={ collaborative } className="w-[30px] h-auto dark:invert" />,
   },
   {
     title: "Cutting Edge",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi nesciunt est nostrum omnis ab sapiente.",
+      "From novel control algorithms to compliant deployment systems, we push the limits of student engineering.",
     icon: <img src={ cutting_edge } className="w-[30px] h-auto dark:invert" />,
   },
 ];
@@ -104,7 +104,10 @@ export const Services = () => {
             Brown University's Largest Undergraduate Engineering Club
           </h2>
           <p className="text-muted-foreground text-xl mt-4 mb-8">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna libero, pretium congue tincidunt eu, sodales eu tortor. Morbi malesuada dapibus ante eu sodales. Ut cursus erat sed auctor vestibulum. Vivamus facilisis metus nunc. Etiam erat lectus, dapibus id sollicitudin vitae, dapibus eu leo.
+            Brown Space Engineering is a student-run spaceflight engineering club committed to a philosophy
+            of accessibility, inclusion, and do-it-yourself engineering. The largest engineering club at Brown, BSE involves
+            students of all disciplines, experience levels, and backgrounds in the design, construction, and operation of
+            CubeSats and other space-related engineering projects.
           </p>
           <div className="flex flex-row gap-8 items-start">
             <div className="flex flex-col gap-4">
