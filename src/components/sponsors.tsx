@@ -1,4 +1,4 @@
-       import { Card, CardHeader, CardContent, CardFooter } from "@/components/ui/card"  // Ensure Card component from Shadcn UI
+import { Card, CardHeader, CardContent, CardFooter } from "@/components/ui/card"  // Ensure Card component from Shadcn UI
 import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
 
@@ -39,7 +39,7 @@ export const Sponsors = () => {
   )
 }
 
-const SponsorCard = ({ tier, img, imgAlt, scale=1, desc }: {tier: string, img: string, imgAlt: string, scale?: number}) => {
+const SponsorCard = ({ tier, img, imgAlt, scale=1, desc }: {tier: string, img: string, imgAlt: string, scale?: number, desc: string}) => {
   return (
     <motion.div
       whileHover={{
@@ -56,12 +56,10 @@ const SponsorCard = ({ tier, img, imgAlt, scale=1, desc }: {tier: string, img: s
           <img
             src={img}
             width="200"
-            // height="50"
             alt={imgAlt}
             className="object-contain object-center"
             style={{scale: `${scale}`}}
           />
-
           
         </CardContent>
         <CardFooter>
