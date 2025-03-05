@@ -14,7 +14,7 @@ const articleList: ArticleProps[] = [
   {
     title: "PVDX",
     summary:
-      "The primary mission of the Perovskite Visuals and Degradation eXperiment is to test next-generation, highly efficient perovskite solar cells in harsh low-Earth orbit in collaboration with the Padture lab.",
+      "The primary mission of the Perovskite Visuals and Degradation eXperiment is to test next-generation, highly efficient perovskite solar cells in low-Earth orbit in collaboration with the Padture lab.",
     imageSrc: "/projects/PVDX.png",
     link: "https://www.brown.edu/news/2021-04-21/cubesat",
   },
@@ -28,7 +28,7 @@ const articleList: ArticleProps[] = [
   {
     title: "SBUDNIC",
     summary:
-      "We created the SPUDNIC 3U CubeSat, sent up in 2022, designed to demonstrate a practical, low-cost drag sail to cut down on space debris.",
+      "The SPUDNIC 3U CubeSat, launched in 2022, demonstrated a practical, low-cost drag sail to cut down on space debris.",
     imageSrc: "/projects/marco-sbudnic.jpg",
     link: "https://www.sbudnic.space/home",
   },
