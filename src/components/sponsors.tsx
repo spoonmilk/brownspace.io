@@ -28,7 +28,7 @@ export const Sponsors = () => {
           </a>
         </div>
         <div className="flex justify-center mt-16">
-          <Button variant="outline" size="sm" className="text-lg" onClick={(e) => {
+          <Button variant="outline" size="sm" className="text-lg" onClick={() => {
               window.location.href='https://drive.google.com/file/d/1dP9w72XERuV0gbTzaK4wEZiP7xyGBAXr/view?usp=sharing';
           }}>
             Sponsor Us!
@@ -40,7 +40,7 @@ export const Sponsors = () => {
 }
 
 
-const SponsorCard = ({ tier, img, imgAlt, scale=1, desc }: {tier: string, img: string, imgAlt: string, scale?: number}) => {
+const SponsorCard = ({ tier, img, imgAlt, scale=1, desc }: {tier: string, img: string, imgAlt: string, scale?: number, desc?: string}) => {
   return (
     <motion.div
       whileHover={{
