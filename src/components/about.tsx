@@ -12,11 +12,11 @@ export const About = () => {
 
   const stats: statsProps[] = [
     {
-      quantity: 14,
+      quantity: 13,
       description: "Years of Excellence",
     },
     {
-      quantity: 100,
+      quantity: 200,
       description: "Members",
     },
     {
@@ -73,7 +73,8 @@ export const About = () => {
                 className="text-xl text-muted-foreground mt-4 line-clamp-5"
                 variants={fadeUpVariants}
               >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna libero, pretium congue tincidunt eu, sodales eu tortor. Morbi malesuada dapibus ante eu sodales. Ut cursus erat sed auctor vestibulum. Vivamus facilisis metus nunc. Etiam erat lectus, dapibus id sollicitudin vitae, dapibus eu leo.
+                BSE started its journey in 2012. Since then, we've grown to over 200 members, launched 2 satellites (with one in the works),
+                and fostered Brown University's best undergraduate engineering talent. 
               </motion.p>
             </div>
 
@@ -105,7 +106,8 @@ export const About = () => {
                     variants={fadeUpVariants}
                   >
                     <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold ">
-                      <NumberTicker value={quantity} />+
+                      <NumberTicker value={quantity} />
+                      {description === "Members" && <span className="text-xl">+</span>}
                     </h2>
                     <p className="text-xl text-muted-foreground">{description}</p>
                   </motion.div>

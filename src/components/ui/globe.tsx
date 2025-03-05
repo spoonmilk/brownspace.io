@@ -17,7 +17,7 @@ const GLOBE_CONFIG: COBEOptions = {
   mapSamples: 32000,
   mapBrightness: 1.2,
   baseColor: [1, 1, 1],
-  markerColor: [150 / 255, 50 / 255, 200 / 255],
+  markerColor: [0.7, 0, 0],
   glowColor: [0.7, 0.7, 0.7],
   markers: [ 
     { location: [41.8240, -71.4128], size: 0.15 }, // Increased size of the marker
