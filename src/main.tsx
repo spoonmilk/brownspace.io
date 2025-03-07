@@ -11,6 +11,7 @@ import { ThemeProvider } from './components/theme-provider.tsx';
 import ProjectsPage from './pages/ProjectsPage.tsx'
 import SubgroupsPage from './pages/SubgroupsPage.tsx'
 import SponsorsPage from './pages/SponsorsPage.tsx'
+import ISCPage from './pages/ISC.tsx'
 
 const router = createBrowserRouter([
   {
@@ -38,6 +39,11 @@ const router = createBrowserRouter([
     element: <SponsorsPage />,
     errorElement: <Home />
   },
+  {
+    path: "/isc",
+    element: <ISCPage />,
+    errorElement: <Home />
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
