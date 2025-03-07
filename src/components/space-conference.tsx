@@ -15,7 +15,7 @@ const ISC = () => {
     return (
         <div className="mt-12">
             <h1 className="purple-fancy-title text-center text-8xl fade-in">Ivy Space Conference</h1>
-            <div className="flex mt-8 w-2/3 mx-auto">
+            <div className="flex mt-8 w-3/4 mx-auto">
                 <img src="Ivy Space Coalition.png"></img>
                 <div className="bg-white"></div>
                 <motion.div
@@ -35,11 +35,16 @@ const ISC = () => {
                         
                         <p className="text-2xl mt-8"><span>Where: </span><span className="font-bold">Brown University</span></p>
                         <p className="text-2xl mt-8"><span>Dates: </span><span className="font-bold">April 5-6, 2025</span></p>
-                        <p className="text-xl text-center mx-8 mt-8 font-semibold">Reach out to your University rocketry or cubesat club if you want to join universities across the Ivy League and in the Boston area for two days of fun panels, research discussions, and showcases! 🚀</p>
+                        <p className="text-xl text-center mx-8 mt-8 font-semibold">
+                            Want to join universities across the Ivy League and in the Boston area for two days of run panels, research discussions, and showcases?
+                        </p>
+                        <p className="text-xl text-center mx-8 mt-2 font-semibold">
+                            Reach out to your University rocketry or cubesat club and have them contact us!
+                        </p>
                         <div className="flex flex-row">
                             <p className="text-xl text-center ml-8 mr-2 my-8 font-semibold"> Reach out to us at <a href="https://www.instagram.com/ivyspaceco/">@ivyspaceco</a></p>
                             <a href="https://www.instagram.com/ivyspaceco/">
-                                <Instagram className="mt-9 ml-0 text-pink-600 hover:text-pink-700"/>
+                                <Instagram className="mt-8 ml-0 text-pink-600 hover:text-pink-700"/>
                             </a>
                         </div>
                         
