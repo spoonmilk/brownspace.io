@@ -14,7 +14,7 @@ import { Instagram } from 'lucide-react';
 const ISC = () => {
     return (
         <div className="mt-12">
-            <h1 className="purple-fancy-title text-center text-8xl fade-in">Ivy Space Conference</h1>
+            <h1 className="purple-fancy-title text-center text-8xl fade-in font-semibold">Ivy Space Conference</h1>
             <div className="flex mt-8 w-3/4 mx-auto">
                 <img src="Ivy Space Coalition.png"></img>
                 <div className="bg-white"></div>
@@ -30,7 +30,7 @@ const ISC = () => {
                 >
                     <Card className="bg-muted/50 relative mt-8 flex flex-col  items-center">
                         <CardTitle>
-                            <h2 className="text-4xl mt-8 text-center isc-title">Join us for the 4th annual iteration!</h2>
+                            <h2 className="text-4xl mt-8 text-center isc-title">Join us for the 8th annual iteration!</h2>
                         </CardTitle>
                         
                         <p className="text-2xl mt-8"><span>Where: </span><span className="font-bold">Brown University</span></p>
@@ -52,7 +52,8 @@ const ISC = () => {
 
                 </motion.div>
             </div>
-            <div className="speakers mt-12">
+            {/*}
+            <div className="more-info mt-12">
                 <h1 className="red-fancy-title text-center text-6xl mb-8">Schedule</h1>
                 <h1 className="red-fancy-title text-center text-6xl mb-8">Featuring Speakers From</h1>
                 <div className="flex flex-row justify-center items-center mx-20">
@@ -62,6 +63,7 @@ const ISC = () => {
                     <SectionCard name="speaker 1" img="member_images/gabriel-chen.jpg" imgAlt="placeholder" desc="gabe from brown" />
                 </div>
             </div>
+            */}
         </div>
 
     )
