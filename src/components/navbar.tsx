@@ -24,6 +24,10 @@ interface RouteProps {
 
 const routeList: RouteProps[] = [
   {
+    href: "/isc",
+    label: "Ivy Space Conference"
+  },
+  {
     href: "/",
     label: "Home",
   },
@@ -118,7 +122,7 @@ export const Navbar = () => {
                 key={i}
                 className={`text-[17px] ${buttonVariants({
                   variant: "ghost",
-                })}`}
+                })} ${(route.label=="Ivy Space Conference") ? "purple-fancy-title" : ""}`}
               >
                 {route.label}
               </a>
