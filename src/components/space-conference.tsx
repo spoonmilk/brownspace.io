@@ -1,8 +1,8 @@
 import {
     Card,
-    CardContent,
-    CardFooter,
-    CardHeader,
+    //     CardContent,
+    //     CardFooter,
+    //     CardHeader,
     CardTitle,
 } from "@/components/ui/card";
 import { motion } from "framer-motion";
