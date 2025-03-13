@@ -169,18 +169,7 @@ const teamList: TeamProps[] = [
             }
         ]
     },
-    {
-        "imageUrl": "member_images/geoffrey-tillisch.jpg",
-        "name": "Geoffrey Tillisch",
-        "position": "",
-        "subgroup": "Structures",
-        "socialNetworks": [
-            {
-                "name": "Linkedin",
-                "url": "www.linkedin.com/in/geoffrey-tillisch-7b3a08294"
-            }
-        ]
-    },
+
     {
         "imageUrl": "member_images/nicole-marion.jpeg",
         "name": "Nicole Marion Villarroel ",
@@ -617,7 +606,7 @@ const teamList: TeamProps[] = [
     {
         "imageUrl": "member_images/geoffrey-tillisch.jpg",
         "name": "Geoffrey Tillisch",
-        "position": "",
+        "position": "Robotics Co-Lead",
         "subgroup": "Structures",
         "socialNetworks": [
             {
