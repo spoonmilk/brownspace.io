@@ -14,6 +14,18 @@ const teamList: TeamProps[] = [
         ]
     },
     {
+        "imageUrl": "member_images/defne-doken.jpeg",
+        "name": "Defne Doken",
+        "position": "",
+        "subgroup": "Flight Software",
+        "socialNetworks": [
+            {
+                "name": "Linkedin",
+                "url": "https://www.linkedin.com/in/defnedoken/"
+            }
+        ]
+    },
+    {
         "imageUrl": "member_images/darren-wang.jpg",
         "name": "Darren Wang",
         "position": "",
@@ -28,7 +40,7 @@ const teamList: TeamProps[] = [
     {
         "imageUrl": "member_images/tanish-makadia.jpeg",
         "name": "Tanish Makadia",
-        "position": "Flight Software Lead",
+        "position": "Flight Software Co-Lead",
         "subgroup": "Flight Software",
         "socialNetworks": [
             {
@@ -63,8 +75,8 @@ const teamList: TeamProps[] = [
     },
     {
         "imageUrl": "member_images/ignacio-blancas.jpeg",
-        "name": "Nacho",
-        "position": "Incoming Co-Lead",
+        "name": "Nacho Blancas-Rodriguez",
+        "position": "Incoming Flight Software Co-Lead",
         "subgroup": "Flight Software",
         "socialNetworks": [
             {
@@ -653,7 +665,7 @@ const teamList: TeamProps[] = [
     {
         "imageUrl": "member_images/yi-lyo.png",
         "name": "Yi Lyo",
-        "position": "Flight Software Co-Lead",
+        "position": "Incoming Flight Software Co-Lead",
         "subgroup": "Flight Software",
         "socialNetworks": [
             {
