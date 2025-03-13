@@ -3,13 +3,25 @@ import { TeamProps } from "./types/team"
 const teamList: TeamProps[] = [
     {
         "imageUrl": "member_images/kelly-lin.jpg",
-        "name": "Kelly",
+        "name": "Kelly Lin",
         "position": "",
         "subgroup": "Avionics",
         "socialNetworks": [
             {
                 "name": "Linkedin",
                 "url": ""
+            }
+        ]
+    },
+    {
+        "imageUrl": "member_images/darren-wang.jpg",
+        "name": "Darren Wang",
+        "position": "",
+        "subgroup": "Ground Software",
+        "socialNetworks": [
+            {
+                "name": "Linkedin",
+                "url": "https://www.linkedin.com/in/darren-wang-84582a22a/"
             }
         ]
     },
