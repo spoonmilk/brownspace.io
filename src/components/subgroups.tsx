@@ -9,7 +9,7 @@ const Subgroup = ({ subgroupName, description, imageUrl }: { subgroupName: strin
   const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0.5, 1, 0.5]);
 
   return (
-      <motion.div ref={ref} style={{ y, scale, opacity }} className="flex justify-center items-center dark:bg-zinc-900 p-4 rounded-lg shadow-lg mb-20 w-1/2 mx-auto">
+      <motion.div ref={ref} style={{ y, scale, opacity }} className="flex justify-center items-center dark:bg-zinc-900 p-4 rounded-lg shadow-lg mb-20 w-3/4 md:w-1/2 mx-auto">
           <div className="text-center">
               <img src={imageUrl} alt={subgroupName} width={500} height={200} className="mx-auto rounded-lg "/>
               <h2 className="mt-4 text-xl font-semibold dark:text-white pb-2">{subgroupName}</h2>
@@ -23,7 +23,7 @@ export const Subgroups = () => {
 
   return (
       <div className="flex flex-col items-center">
-          <h1 className="text-3xl font-bold text-center mb-20">Explore Subgroups</h1>
+          <h1 className="text-3xl font-bold text-center mb-20 mt-10">Explore Subgroups</h1>
           <div className="overflow-hidden w-full">
               {[
                   { team: 'ADCS', description: 'Attitude Determination & Control Systems (ADCS) is responsible for identifying and maintaining the proper orientation of PVDX as it orbits in space, by collecting data from onboard sensors such as magnetometers and combining them with knowledge of previous states.', imageUrl: '/subgroups/adcs-photo.jpg' },
