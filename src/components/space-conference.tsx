@@ -26,7 +26,7 @@ const aerospaceOrganizations = [
 const ISC = () => {
     return (
         <div className="mt-12">
-            <h1 className="purple-fancy-title text-center text-5xl fade-in font-semibold">Ivy Space Conference</h1>
+            <h1 className="purple-fancy-title text-center text-5xl fade-in font-semibold">Ivy+ Space Conference</h1>
             <div className="flex flex-col md:flex-row mt-8 w-3/4 mx-auto">
               {/* Image */}
               <img
@@ -67,7 +67,7 @@ const ISC = () => {
                   <p className="text-xl text-center mx-8 mt-8 font-semibold">
                     Join us for presentations on aerospace industry and research, student
                     showcase sessions, speakers from the{" "}
-                    <span className="font-bold">ISS National Lab, NASA JPL, and Rocketlab</span>;
+                    <span className="font-bold">ISS National Lab, SpaceX, NASA JPL, and Rocketlab</span>;
                     opportunities to learn from and present to others, and more! Keep an eye on
                     this page for day-of details, coming soon...
                   </p>
@@ -94,7 +94,7 @@ const ISC = () => {
             <div className="get-involved mt-12 w-3/4 mx-auto">
               <h1 className="red-fancy-title text-center text-5xl mb-8">Get Involved</h1>
               <Card className="bg-muted/50 relative mt-8 flex flex-col items-center">
-                    <h1 className="text-3xl m-6 text-center">If your school has any of the following clubs, please register with them:</h1>
+                    <h1 className="text-3xl m-6 text-center">If you are a member of the Brown community, register <a className="font-bold underline" href="https://forms.gle/d78ZPekNX7s3AgcbA">here</a>! If you are from another school that is already attending, please register with one of the following clubs:</h1>
                     <ul className="text-xl text-center">
                       {aerospaceOrganizations.map((org, i) => (
                         <li className="mb-2" key={i}>{org}</li>
