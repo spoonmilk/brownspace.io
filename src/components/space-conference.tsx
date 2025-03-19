@@ -4,20 +4,20 @@ import {
     // CardFooter,
     // CardHeader,
     CardTitle,
-} from "@/components/ui/card";
+  } from "@/components/ui/card";
 import { motion } from "framer-motion";
 
 const aerospaceOrganizations = [
-    "Yale Undergraduate Aerospace Association",
-    "Princeton Rocketry",
-    "Columbia Space Initiative",
-    "Brown Space Engineering",
-    "Brown Rocketry",
-    "Northeastern TeraLink",
-    "Wharton Undergraduate Aerospace Club",
-    "Cornell Rocketry",
-    "Dartmouth Rocketry Team",
-    "Harvard SEDS"
+  "Yale Undergraduate Aerospace Association",
+  "Princeton Rocketry",
+  "Columbia Space Initiative",
+  "Brown Space Engineering",
+  "Brown Rocketry",
+  "Northeastern TeraLink",
+  "Wharton Undergraduate Aerospace Club",
+  "Cornell Rocketry",
+  "Dartmouth Rocketry Team",
+  "Harvard SEDS"
 ];
 
 const ISC = () => {
@@ -93,14 +93,14 @@ const ISC = () => {
               <Card className="bg-muted/50 relative mt-8 flex flex-col items-center">
                     <h1 className="text-3xl m-6 text-center">If your school has any of the following clubs, please register with them:</h1>
                     <ul className="text-xl text-center">
-                        {aerospaceOrganizations.map((org, i) => (
-                            <li className="mb-2" key={i}>{org}</li>
-                        ))}
+                      {aerospaceOrganizations.map((org, i) => (
+                        <li className="mb-2" key={i}>{org}</li>
+                      ))}
                     </ul>
                     <h1 className="text-3xl m-6 text-center mx-2">Otherwise, reach out to us on Instagram or at <span className="underline"><a href="mailto:bse@brown.edu">bse@brown.edu</a></span> and we'll see what we can do!</h1>
               </Card>
             </div>
-
+            
             {/*}
             <div className="more-info mt-12">
                 <h1 className="red-fancy-title text-center text-6xl mb-8">Schedule</h1>
