@@ -1,14 +1,11 @@
 import {
     Card,
-    CardContent,
-    CardDescription,
-    CardFooter,
-    CardHeader,
+    // CardContent,
+    // CardFooter,
+    // CardHeader,
     CardTitle,
   } from "@/components/ui/card";
 import { motion } from "framer-motion";
-
-import { Instagram } from 'lucide-react';
 
 const aerospaceOrganizations = [
   "Yale Undergraduate Aerospace Association",
@@ -82,14 +79,14 @@ const ISC = () => {
                 </Card>
               </motion.div>
             </div>
-            {/*
+            
             <div className="get-involved mt-12 text-center mx-auto">
               <h1 className="red-fancy-title text-center text-5xl mb-8">Schedule</h1>
               <div className="flex justify-center">
-                <img src="Ivy Space Coalition.png"></img>  
+                <img src="ivyspaceschedule.png" style={{width: "auto", height: "auto", maxWidth: "60%"}}></img>  
               </div>
             </div>
-            */}
+            
 
             <div className="get-involved mt-12 w-3/4 mx-auto">
               <h1 className="red-fancy-title text-center text-5xl mb-8">Get Involved</h1>
@@ -121,34 +118,35 @@ const ISC = () => {
     )
 }
 
-const SectionCard = ({ name, img, imgAlt, scale=1, desc }: {name: string, img: string, imgAlt: string, scale?: number, desc?: string}) => {
-    return (
-      <motion.div
-        whileHover={{
-          scale: 1.01,
-          transition: { type: "spring", stiffness: 300 }
-        }}
-        className="w-full h-full"
-      >
-        <Card className="w-full max-w-xs border shadow-lg rounded-lg overflow-hidden transition-colors hover:z-10 focus-visible:outline-none focus-visible:ring-1  dark:hover:z-10 dark:focus-visible:ring-gray-300 flex flex-col h-full">
-          <CardHeader className="flex justify-center py-4 bg-gray-100 dark:bg-zinc-900">
-            <h2 className="text-xl font-semibold text-gray-900 dark:text-white text-center">{name}</h2>
-          </CardHeader>
-          <CardContent className="flex flex-1 justify-center p-4">
-            <img
-              src={img}
-              width="200"
-              alt={imgAlt}
-              className="object-contain object-center"
-              style={{scale: `${scale}`}}
-            />
-          </CardContent>
-          <CardFooter className="flex flex-col items-center justify-end p-4">
-            <p className="text-sm text-center">{desc}</p>
-          </CardFooter>
-        </Card>
-      </motion.div>
-    )
-  }
+
+// const SectionCard = ({ name, img, imgAlt, scale=1, desc }: {name: string, img: string, imgAlt: string, scale?: number, desc?: string}) => {
+//     return (
+//       <motion.div
+//         whileHover={{
+//           scale: 1.01,
+//           transition: { type: "spring", stiffness: 300 }
+//         }}
+//         className="w-full h-full"
+//       >
+//         <Card className="w-full max-w-xs border shadow-lg rounded-lg overflow-hidden transition-colors hover:z-10 focus-visible:outline-none focus-visible:ring-1  dark:hover:z-10 dark:focus-visible:ring-gray-300 flex flex-col h-full">
+//           <CardHeader className="flex justify-center py-4 bg-gray-100 dark:bg-zinc-900">
+//             <h2 className="text-xl font-semibold text-gray-900 dark:text-white text-center">{name}</h2>
+//           </CardHeader>
+//           <CardContent className="flex flex-1 justify-center p-4">
+//             <img
+//               src={img}
+//               width="200"
+//               alt={imgAlt}
+//               className="object-contain object-center"
+//               style={{scale: `${scale}`}}
+//             />
+//           </CardContent>
+//           <CardFooter className="flex flex-col items-center justify-end p-4">
+//             <p className="text-sm text-center">{desc}</p>
+//           </CardFooter>
+//         </Card>
+//       </motion.div>
+//     )
+//   }
 
 export default ISC;
