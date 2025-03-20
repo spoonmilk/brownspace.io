@@ -79,19 +79,11 @@ const ISC = () => {
                 </Card>
               </motion.div>
             </div>
-            
-            <div className="get-involved mt-12 text-center mx-auto">
-              <h1 className="red-fancy-title text-center text-5xl mb-8">Schedule</h1>
-              <div className="flex justify-center">
-                <img src="ivyspaceschedule.png" style={{width: "auto", height: "auto", maxWidth: "60%"}}></img>  
-              </div>
-            </div>
-            
 
             <div className="get-involved mt-12 w-3/4 mx-auto">
               <h1 className="red-fancy-title text-center text-5xl mb-8">Get Involved</h1>
               <Card className="bg-muted/50 relative mt-8 flex flex-col items-center">
-                    <h1 className="text-3xl m-6 text-center">If you are a member of the Brown community, register <a className="font-bold underline" href="https://forms.gle/d78ZPekNX7s3AgcbA">here</a>! If you are from another school that is already attending, please register with one of the following clubs:</h1>
+                    <h1 className="text-3xl m-6 text-center">If you are a member of the Brown community or able to arrange your own transport/accommodation, register <a className="text-red-700 font-bold underline" href="https://forms.gle/d78ZPekNX7s3AgcbA">here</a>! If you are from another school that is already attending, please register with one of the following clubs:</h1>
                     <ul className="text-xl text-center">
                       {aerospaceOrganizations.map((org, i) => (
                         <li className="mb-2" key={i}>{org}</li>
@@ -100,6 +92,16 @@ const ISC = () => {
                     <h1 className="text-3xl m-6 text-center mx-2">Otherwise, reach out to us on Instagram or at <span className="underline"><a href="mailto:bse@brown.edu">bse@brown.edu</a></span> and we'll see what we can do!</h1>
               </Card>
             </div>
+            
+            <div className="get-involved mt-12 text-center mx-auto">
+              <h1 className="purple-fancy-title text-center text-5xl mb-8">Schedule</h1>
+              <div className="flex justify-center">
+                <img src="ivyspaceschedule.png" style={{width: "auto", height: "auto", maxWidth: "60%"}}></img>  
+              </div>
+            </div>
+            
+
+            
             
             {/*}
             <div className="more-info mt-12">
