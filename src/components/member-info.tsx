@@ -122,7 +122,7 @@ const teamList: TeamProps[] = [
         ]
     },
     {
-        "imageUrl": "member_images/alyson-jiang.png",
+        "imageUrl": "member_images/taohon-wang.jpg",
         "name": "Taohan Wang",
         "position": "Incoming ADCS Lead",
         "subgroup": "ADCS",
