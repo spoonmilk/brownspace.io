@@ -65,12 +65,11 @@ const ISC = () => {
                     Join us for presentations on aerospace industry and research, student
                     showcase sessions, speakers from the{" "}
                     <span className="font-bold">ISS National Lab, SpaceX, NASA JPL, and Rocketlab</span>;
-                    opportunities to learn from and present to others, and more! Keep an eye on
-                    this page for day-of details, coming soon...
+                    opportunities to learn from and present to others, and more!
                   </p>
                   <div className="flex flex-row">
                     <p className="text-xl text-center mx-6 my-8 font-semibold">
-                      Reach out to us at{" "}
+                      See more at {" "}
                       <a className="underline text-pink-700" href="https://www.instagram.com/ivyspaceco/">@ivyspaceco</a>
 
                     </p>
@@ -78,6 +77,13 @@ const ISC = () => {
                   </div>
                 </Card>
               </motion.div>
+            </div>
+
+            <div className="get-involved mt-12 text-center mx-auto">
+              <h1 className="purple-fancy-title text-center text-5xl mb-8">Schedule</h1>
+              <div className="flex justify-center">
+                <img src="finalivyspaceschedule.png" style={{width: "auto", height: "auto", maxWidth: "60%"}}></img>  
+              </div>
             </div>
 
             <div className="get-involved mt-12 w-3/4 mx-auto">
@@ -93,12 +99,7 @@ const ISC = () => {
               </Card>
             </div>
             
-            <div className="get-involved mt-12 text-center mx-auto">
-              <h1 className="purple-fancy-title text-center text-5xl mb-8">Schedule</h1>
-              <div className="flex justify-center">
-                <img src="ivyspaceschedule.png" style={{width: "auto", height: "auto", maxWidth: "60%"}}></img>  
-              </div>
-            </div>
+            
             
 
             
