@@ -1,16 +1,21 @@
 export const Footer = () => {
   return (
     <footer id="footer">
-      <hr className="w-11/12 mx-auto" />
-
-      <section className="container py-20 grid grid-cols-2 md:grid-cols-4 xl:grid-cols-6 gap-x-12 gap-y-8">
-        <img src="icon.png" alt="Brown Space Engineering Logo" className="w-15 dark:invert" />
-        <img src="brownengn.png" alt="Brown School of Engineering Logo" className="w-15 dark:hidden" />
-        <img src="brownengn_whtxt.png" alt="Brown School of Engineering Logo" className="w-15 hidden dark:block" />
-        <a href="https://github.com/BrownSpaceEngineering" target="_blank" rel="noopener noreferrer">
-          <img src="/github-mark.svg" alt="GitHub Logo" className="w-20 dark:invert" />
-        </a>
-     </section>
+      <div className="horizon w-11/12 mx-auto" />
+      <section className="container py-16 flex flex-col gap-6">
+        <div className="flex flex-wrap items-center gap-8">
+          <img src="icon.png" alt="Brown Space Engineering Logo" className="h-10 w-auto dark:invert" />
+          <img src="brownengn.png" alt="Brown School of Engineering Logo" className="h-8 w-auto dark:hidden" />
+          <img src="brownengn_whtxt.png" alt="Brown School of Engineering Logo" className="h-8 w-auto hidden dark:block" />
+          <a href="https://github.com/BrownSpaceEngineering" target="_blank" rel="noopener noreferrer">
+            <img src="/github-mark.svg" alt="GitHub Logo" className="h-8 w-auto dark:invert opacity-70 hover:opacity-100 transition-opacity" />
+          </a>
+        </div>
+        <div className="flex items-center gap-3 text-muted-foreground">
+          <span className="signal-dot" />
+          <p className="mono text-xs">BROWN SPACE ENGINEERING — PROVIDENCE, RI</p>
+        </div>
+      </section>
     </footer>
   );
 };

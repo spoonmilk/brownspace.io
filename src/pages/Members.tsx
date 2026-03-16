@@ -13,10 +13,12 @@ function Members() {
         <Team subgroup="Club Presidents" />
         <Team subgroup="ADCS" />
         <Team subgroup="Avionics" />
+        <Team subgroup="Communications" />
         <Team subgroup="Flight Software" />
         <Team subgroup="Ground Software" />
         <Team subgroup="Operations" />
         <Team subgroup="R&D" />
+        <Team subgroup="Robotics" />
         <Team subgroup="Structures" />
         
         

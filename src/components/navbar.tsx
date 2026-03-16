@@ -11,11 +11,10 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-
 import { buttonVariants } from "@/components/ui/button";
 import { Menu } from "lucide-react";
 import { ModeToggle } from "@/components/mode-toggle";
-import Logo from "@/components/logo"
+import Logo from "@/components/logo";
 
 interface RouteProps {
   href: string;
@@ -23,64 +22,41 @@ interface RouteProps {
 }
 
 const routeList: RouteProps[] = [
-  {
-    href: "/isc",
-    label: "Ivy Space Conference"
-  },
-  {
-    href: "/",
-    label: "Home",
-  },
-  {
-    href: "/members",
-    label: "Members"
-  },
-  {
-    href: "/projects",
-    label: "Projects",
-  },
-  {
-     href: "/subgroups",
-     label: "Subgroups",
-  },
-  {
-    href: "/sponsors",
-    label: "Sponsors"
-  },
-  {
-    href: "/mailto:recipient@example.com",
-    label: "Contact",
-  },
+  { href: "/", label: "Home" },
+  { href: "/members", label: "Members" },
+  { href: "/projects", label: "Projects" },
+  { href: "/subgroups", label: "Subgroups" },
+  { href: "/sponsors", label: "Sponsors" },
+  { href: "/mailto:recipient@example.com", label: "Contact" },
 ];
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  return (
-    <header className="sticky border-b-[1px] top-0 z-40 w-full bg-background">
-      <NavigationMenu className="mx-auto">
-        <NavigationMenuList className="container h-14 px-4 w-screen flex justify-between ">
-            <div className="container h-14 px-4 w-screen flex justify-start">
-              <div className="flex items-center space-x-2">
-                <NavigationMenuItem className="font-bold flex">
-                  <a
-                    rel="noreferrer noopener"
-                    href="/"
-                    className="ml-2 font-bold text-xl flex"
-                  >
-                    <Logo/>
-                  </a>
-                </NavigationMenuItem>
-              </div>
-            </div>
 
-          {/* mobile */}
+  return (
+    <header className="sticky border-b top-0 z-40 w-full bg-background/80 backdrop-blur-md">
+      <NavigationMenu className="mx-auto">
+        <NavigationMenuList className="container h-14 px-4 w-screen flex justify-between">
+          <div className="container h-14 px-4 w-screen flex justify-start">
+            <div className="flex items-center gap-3">
+              {/* Live signal indicator */}
+              <span className="signal-dot hidden md:inline-block" />
+              <NavigationMenuItem className="font-bold flex">
+                <a
+                  rel="noreferrer noopener"
+                  href="/"
+                  className="ml-1 font-bold text-xl flex items-center"
+                >
+                  <Logo />
+                </a>
+              </NavigationMenuItem>
+            </div>
+          </div>
+
+          {/* Mobile */}
           <span className="flex md:hidden">
             <ModeToggle />
-
-            <Sheet
-              open={isOpen}
-              onOpenChange={setIsOpen}
-            >
+            <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger className="px-2">
                 <Menu
                   className="flex md:hidden h-5 w-5"
@@ -89,12 +65,9 @@ export const Navbar = () => {
                   <span className="sr-only">Menu Icon</span>
                 </Menu>
               </SheetTrigger>
-
               <SheetContent side={"right"}>
                 <SheetHeader>
-                  <SheetTitle className="font-bold text-xl">
-                    BSE
-                  </SheetTitle>
+                  <SheetTitle className="font-bold text-xl">BSE</SheetTitle>
                 </SheetHeader>
                 <nav className="flex flex-col justify-center items-center gap-2 mt-4">
                   {routeList.map(({ href, label }: RouteProps) => (
@@ -113,16 +86,16 @@ export const Navbar = () => {
             </Sheet>
           </span>
 
-          {/* rentals */}
-          <nav className="hidden md:flex gap-2">
+          {/* Desktop nav */}
+          <nav className="hidden md:flex gap-1 items-center">
             {routeList.map((route: RouteProps, i) => (
               <a
                 rel="noreferrer noopener"
-                href={(route.label != "Contact")? route.href : "mailto:bse@brown.edu"}
+                href={route.label !== "Contact" ? route.href : "mailto:bse@brown.edu"}
                 key={i}
-                className={`text-[17px] ${buttonVariants({
+                className={`text-[15px] mono tracking-wider ${buttonVariants({
                   variant: "ghost",
-                })} ${(route.label=="Ivy Space Conference") ? "purple-fancy-title" : ""}`}
+                })}`}
               >
                 {route.label}
               </a>
@@ -137,4 +110,3 @@ export const Navbar = () => {
     </header>
   );
 };
-

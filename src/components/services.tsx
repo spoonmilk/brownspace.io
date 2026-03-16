@@ -15,27 +15,27 @@ interface ServiceProps {
 
 const serviceList: ServiceProps[] = [
   {
-    title: "Open Source", 
+    title: "Open Source",
     description:
       "BSE is committed to making space accessible, with all of our projects being open source and available to the public.",
-    icon: <img src={ open_source } className="w-[25px] h-auto opacity dark:invert" />,
+    icon: <img src={open_source} className="w-[25px] h-auto dark:invert" />,
   },
   {
     title: "Collaborative",
     description:
       "Our subgroups are comprised of students from all disciplines and experience levels, united under a passion for spaceflight.",
-    icon: <img src={ collaborative } className="w-[30px] h-auto dark:invert" />,
+    icon: <img src={collaborative} className="w-[30px] h-auto dark:invert" />,
   },
   {
     title: "Cutting Edge",
     description:
       "From novel control algorithms to compliant deployment systems, we push the limits of student engineering.",
-    icon: <img src={ cutting_edge } className="w-[30px] h-auto dark:invert" />,
+    icon: <img src={cutting_edge} className="w-[30px] h-auto dark:invert" />,
   },
 ];
 
 function Model() {
-  const { scene } = useGLTF("/pvdsmall.glb"); 
+  const { scene } = useGLTF("/pvdsmall.glb");
   const ref = useRef<any>();
 
   useEffect(() => {
@@ -51,12 +51,12 @@ function Model() {
 
   useFrame(() => {
     if (ref.current) {
-      ref.current.rotation.y += 0.01; 
+      ref.current.rotation.y += 0.01;
     }
   });
 
   return (
-    <primitive 
+    <primitive
       object={scene}
       ref={ref}
       scale={300}
@@ -75,12 +75,28 @@ export const Services = () => {
   useEffect(() => {
     if (isInView) {
       controls.start("visible");
-      setTimeout(() => setGrayscale(true), 2000); // Grayscale applied 2 seconds after animations
+      setTimeout(() => setGrayscale(true), 2000);
     }
   }, [isInView, controls]);
 
   return (
     <section ref={sectionRef} className="container pb-32 scale-90">
+      <motion.div
+        initial="hidden"
+        animate={controls}
+        variants={{
+          hidden: {},
+          visible: { transition: { staggerChildren: 0.6 } },
+        }}
+      >
+        <motion.div
+          className="section-tag"
+          variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
+        >
+          Mission
+        </motion.div>
+      </motion.div>
+
       <motion.div
         className="grid lg:grid-cols-[650px,1fr] gap-8 place-items-center overflow-visible"
         initial="hidden"
@@ -102,52 +118,63 @@ export const Services = () => {
           <h2 className="text-3xl md:text-4xl font-bold">
             Brown University's Largest Undergraduate Engineering Club
           </h2>
-          <p className="text-muted-foreground text-xl mt-4 mb-8 padding-bottom-8">
+          <p className="text-muted-foreground text-xl mt-4 mb-8">
             Brown Space Engineering is a student-run spaceflight engineering club committed to a philosophy
-            of accessibility, inclusion, do-it-yourself learning. The largest engineering club at Brown, BSE involves
-            students of all disciplines, experience levels, and backgrounds in the design, construction, and operation of
-            CubeSats and other space-related engineering projects.
+            of accessibility, inclusion, and do-it-yourself learning. The largest engineering club at Brown,
+            BSE involves students of all disciplines, experience levels, and backgrounds in the design,
+            construction, and operation of CubeSats and other space-related engineering projects.
           </p>
-          <div className="flex flex-row gap-8 items-start">
-            <div className="flex flex-col gap-4">
-              {serviceList.map(({ icon, title, description }: ServiceProps) => (
-                <motion.div
-                  key={title}
-                  variants={{
-                    hidden: { opacity: 0, y: 50 },
-                    visible: { scale: 1.01, opacity: 1, y: 0, transition: { type: "spring", stiffness: 300, duration: 2 } },
-                    hover: { scale: 1.05, filter: "grayscale(0%)", transition: { type: "spring", stiffness: 300 } },
-                    unhover: { scale: 1, filter: "grayscale(100%)", transition: { type: "spring", stiffness: 300 } },
-                  }}
-                  whileHover="hover"
-                  animate={grayscale ? "unhover" : controls}
-                  initial="hidden"
-                >
-                  <Card>
-                    <CardHeader className="space-y-1 flex md:flex-row justify-start items-start gap-2 max-h-[135px]">
-                      <div className="mt-0.5 bg-primary/20 p-1.5 mr-2 rounded-2xl">
-                        {icon}
-                      </div>
-                      <div>
-                        <CardTitle>{title}</CardTitle>
-                        <CardDescription className="text-md mt-2 line-clamp-2">
-                          {description}
-                        </CardDescription>
-                      </div>
-                    </CardHeader>
-                  </Card>
-                </motion.div>
-              ))}
-            </div>
+          <div className="flex flex-col gap-4">
+            {serviceList.map(({ icon, title, description }: ServiceProps) => (
+              <motion.div
+                key={title}
+                variants={{
+                  hidden: { opacity: 0, y: 50 },
+                  visible: {
+                    scale: 1.01,
+                    opacity: 1,
+                    y: 0,
+                    transition: { type: "spring", stiffness: 300, duration: 2 },
+                  },
+                  hover: {
+                    scale: 1.03,
+                    transition: { type: "spring", stiffness: 300 },
+                  },
+                  unhover: {
+                    scale: 1,
+                    transition: { type: "spring", stiffness: 300 },
+                  },
+                }}
+                whileHover="hover"
+                animate={grayscale ? "unhover" : controls}
+                initial="hidden"
+              >
+                <Card className="glow-border transition-colors">
+                  <CardHeader className="space-y-1 flex md:flex-row justify-start items-start gap-2 max-h-[135px]">
+                    <div className="mt-0.5 bg-primary/10 border border-primary/20 p-1.5 mr-2 rounded-lg">
+                      {icon}
+                    </div>
+                    <div>
+                      <CardTitle className="flex items-center gap-2">
+                        {title}
+                      </CardTitle>
+                      <CardDescription className="text-md mt-2 line-clamp-2">
+                        {description}
+                      </CardDescription>
+                    </div>
+                  </CardHeader>
+                </Card>
+              </motion.div>
+            ))}
           </div>
         </motion.div>
-        <Canvas 
+
+        <Canvas
           className="hidden w-full max-w-[300px] md:min-w-[700px] lg:max-w-[700px] lg:block absolute top-[50px]"
-          camera={{ position: [110, 110, 120], fov: 50 }} // Initial camera position
+          camera={{ position: [110, 110, 200], fov: 50 }}
         >
           <ambientLight intensity={0.5} />
           <directionalLight position={[10, 10, 10]} />
-          {/* Add an environment for realistic reflections */}
           <Environment preset="studio" background={false} />
           <Suspense fallback={null}>
             <Model />

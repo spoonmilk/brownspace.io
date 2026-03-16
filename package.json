@@ -22,6 +22,8 @@
     "@radix-ui/react-switch": "^1.1.1",
     "@radix-ui/react-toast": "^1.2.2",
     "@react-three/drei": "^9.120.1",
+    "@sanity/client": "^7.17.0",
+    "@sanity/image-url": "^2.0.3",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "cmdk": "^1.0.0",

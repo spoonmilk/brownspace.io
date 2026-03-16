@@ -1,68 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
-
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 3.9%;
-    --primary: 0 0% 9%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 0 0% 9%;
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 45.1%;
-    --accent: 0 0% 96.1%;
-    --accent-foreground: 0 0% 9%;
-    --destructive: 0 84.2% 60.2%;
+    --background: 220 20% 97%;
+    --foreground: 220 15% 10%;
+    --card: 220 15% 100%;
+    --card-foreground: 220 15% 10%;
+    --popover: 220 15% 100%;
+    --popover-foreground: 220 15% 10%;
+    --primary: 210 85% 60%;
+    --primary-foreground: 220 15% 5%;
+    --secondary: 220 10% 90%;
+    --secondary-foreground: 220 15% 20%;
+    --muted: 220 10% 93%;
+    --muted-foreground: 220 10% 45%;
+    --accent: 210 85% 60%;
+    --accent-foreground: 220 15% 5%;
+    --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 0 0% 3.9%;
+    --border: 220 10% 88%;
+    --input: 220 10% 88%;
+    --ring: 210 85% 60%;
     --radius: 0.5rem;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
-    --monchrome-chart-1: 179 2% 10%;
-    --monchrome-chart-2: 60 1% 42%;
-    --monchrome-chart-3: 60 1% 42%;
-    --monchrome-chart-4: 60 1% 58%;
-    --monchrome-chart-5: 60 2% 74%;
+
+    /* Custom */
+    --signal: 195 100% 65%;
+    --signal-glow: rgba(64, 220, 255, 0.15);
   }
 
   .dark {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 0 0% 83.1%;
-    --monchrome-chart-1: 359 2% 92%;
-    --monchrome-chart-2: 240 1% 74%;
-    --monchrome-chart-3: 240 1% 58%;
-    --monchrome-chart-4: 240 1% 42%;
-    --monchrome-chart-5: 240 2% 26%;
+    --background: 222 28% 6%;
+    --foreground: 210 20% 92%;
+    --card: 222 25% 9%;
+    --card-foreground: 210 20% 92%;
+    --popover: 222 25% 9%;
+    --popover-foreground: 210 20% 92%;
+    --primary: 195 100% 65%;
+    --primary-foreground: 222 28% 6%;
+    --secondary: 222 20% 14%;
+    --secondary-foreground: 210 20% 80%;
+    --muted: 222 20% 14%;
+    --muted-foreground: 210 15% 50%;
+    --accent: 195 100% 65%;
+    --accent-foreground: 222 28% 6%;
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 210 20% 92%;
+    --border: 222 20% 16%;
+    --input: 222 20% 16%;
+    --ring: 195 100% 65%;
+
+    /* Custom */
+    --signal: 195 100% 65%;
+    --signal-glow: rgba(64, 220, 255, 0.12);
   }
 }
 
@@ -70,32 +63,140 @@
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
+    font-family: 'Syne', sans-serif;
+  }
+
+  /* Starfield background — dark mode only */
+  .dark body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background-image:
+      radial-gradient(1px 1px at 10% 15%, rgba(255,255,255,0.5) 0%, transparent 100%),
+      radial-gradient(1px 1px at 25% 42%, rgba(255,255,255,0.35) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 38% 8%, rgba(255,255,255,0.45) 0%, transparent 100%),
+      radial-gradient(1px 1px at 52% 66%, rgba(255,255,255,0.4) 0%, transparent 100%),
+      radial-gradient(1px 1px at 63% 30%, rgba(255,255,255,0.3) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 71% 82%, rgba(255,255,255,0.5) 0%, transparent 100%),
+      radial-gradient(1px 1px at 80% 20%, rgba(255,255,255,0.35) 0%, transparent 100%),
+      radial-gradient(1px 1px at 88% 55%, rgba(255,255,255,0.4) 0%, transparent 100%),
+      radial-gradient(1px 1px at 94% 10%, rgba(255,255,255,0.3) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 5% 70%, rgba(255,255,255,0.45) 0%, transparent 100%),
+      radial-gradient(1px 1px at 15% 88%, rgba(255,255,255,0.3) 0%, transparent 100%),
+      radial-gradient(1px 1px at 44% 93%, rgba(255,255,255,0.35) 0%, transparent 100%),
+      radial-gradient(1px 1px at 58% 48%, rgba(255,255,255,0.25) 0%, transparent 100%),
+      radial-gradient(1px 1px at 76% 38%, rgba(255,255,255,0.4) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 90% 75%, rgba(255,255,255,0.5) 0%, transparent 100%),
+      radial-gradient(1px 1px at 33% 55%, rgba(255,255,255,0.3) 0%, transparent 100%),
+      radial-gradient(1px 1px at 19% 28%, rgba(255,255,255,0.35) 0%, transparent 100%),
+      radial-gradient(1px 1px at 67% 12%, rgba(255,255,255,0.4) 0%, transparent 100%),
+      radial-gradient(1px 1px at 84% 92%, rgba(255,255,255,0.3) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 47% 78%, rgba(255,255,255,0.45) 0%, transparent 100%);
+    pointer-events: none;
+  }
+
+  /* Subtle nebula glow in dark mode */
+  .dark body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background:
+      radial-gradient(ellipse 80% 50% at 20% 80%, rgba(64, 100, 255, 0.04) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 40% at 80% 20%, rgba(64, 220, 255, 0.05) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Syne', sans-serif;
+    letter-spacing: -0.02em;
   }
 }
 
-.purple-fancy-title {
-  background: linear-gradient(90deg, rgb(169, 75, 169), rgb(137, 21, 137));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    background-color: var(--color-base);
-}
+@layer components {
+  /* Monospaced label / tag style */
+  .mono {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+  }
 
-.red-fancy-title {
-  background: linear-gradient(90deg, rgb(214, 113, 113), rgb(138, 17, 17));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    background-color: var(--color-base);
-}
+  /* Signal accent — the cyan highlight color */
+  .signal {
+    color: hsl(var(--signal));
+  }
 
-@keyframes fadeIn {
-  from { opacity: 0.25; }
-  to { opacity: 1; }
-}
+  /* Subtle scan line overlay for cards */
+  .scanline {
+    position: relative;
+    overflow: hidden;
+  }
+  .scanline::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0,0,0,0.015) 2px,
+      rgba(0,0,0,0.015) 4px
+    );
+    pointer-events: none;
+    z-index: 1;
+  }
 
-.fade-in {
-  animation: fadeIn 1s ease-in-out;
+  /* Glowing border on dark mode cards */
+  .dark .glow-border {
+    border-color: hsl(var(--signal) / 0.2);
+    box-shadow: 0 0 0 1px hsl(var(--signal) / 0.05), 0 4px 24px rgba(0,0,0,0.4);
+  }
+
+  /* Navbar signal dot — pulsing indicator */
+  .signal-dot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: hsl(var(--signal));
+    box-shadow: 0 0 6px hsl(var(--signal));
+    animation: signal-pulse 2.5s ease-in-out infinite;
+  }
+
+  @keyframes signal-pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.8); }
+  }
+
+  /* Section label tag */
+  .section-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: hsl(var(--signal));
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+  }
+  .section-tag::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 1px;
+    background: hsl(var(--signal));
+  }
+
+  /* Horizon line decoration */
+  .horizon {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, hsl(var(--signal) / 0.4), transparent);
+    margin: 1rem 0;
+  }
 }

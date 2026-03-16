@@ -1,32 +1,21 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import Globe from "./ui/globe";
-import NumberTicker from "@/components/ui/number-ticker"; // Assuming correct import path
+import NumberTicker from "@/components/ui/number-ticker";
 import { Separator } from "./ui/separator";
 
 export const About = () => {
   interface statsProps {
     quantity: number;
     description: string;
+    suffix?: string;
   }
 
   const stats: statsProps[] = [
-    {
-      quantity: 13,
-      description: "Years of Excellence",
-    },
-    {
-      quantity: 200,
-      description: "Members",
-    },
-    {
-      quantity: 3,
-      description: "Satellites",
-    },
-    {
-      quantity: 7,
-      description: "Subgroups",
-    },
+    { quantity: 14,  description: "Years" },
+    { quantity: 200, description: "Members", suffix: "+" },
+    { quantity: 3,   description: "Satellites" },
+    { quantity: 7,   description: "Subgroups" },
   ];
 
   const sectionRef = useRef(null);
@@ -49,7 +38,11 @@ export const About = () => {
         visible: { transition: { staggerChildren: 0.2 } },
       }}
     >
-      <div className="bg-muted/0 border rounded-lg py-12">
+      <motion.div variants={fadeUpVariants} className="section-tag mb-4">
+        About
+      </motion.div>
+
+      <div className="bg-muted/0 border glow-border rounded-lg py-12">
         <motion.div
           className="px-6 flex flex-col-reverse md:flex-row gap-8 md:gap-12"
           variants={fadeUpVariants}
@@ -58,10 +51,10 @@ export const About = () => {
             className="w-[auto] lg:w-[1000px] min-w-[200px] justify-center object-contain rounded-lg"
             variants={fadeUpVariants}
           >
-            <Globe></Globe>
+            <Globe />
           </motion.div>
 
-          <motion.div className="bg-green-0 flex flex-col justify-between" variants={fadeUpVariants}>
+          <motion.div className="flex flex-col justify-between" variants={fadeUpVariants}>
             <div className="pb-6">
               <motion.h2
                 className="text-3xl md:text-4xl font-bold"
@@ -73,47 +66,51 @@ export const About = () => {
                 className="text-xl text-muted-foreground mt-4 line-clamp-5"
                 variants={fadeUpVariants}
               >
-                BSE started its journey in 2012. Since then, we've grown to over 200 members, launched 2 satellites (with one in the works),
-                and fostered Brown University's best undergraduate engineering talent. 
+                BSE started its journey in 2012. Since then, we've grown to over 200 members, launched 2 satellites
+                (with one in the works), and fostered Brown University's best undergraduate engineering talent.
               </motion.p>
             </div>
 
             <motion.section id="statistics" variants={fadeUpVariants} className="hidden lg:block">
-              <div className="grid grid-cols-4 gap-8">
-                {stats.map(({ quantity, description }: statsProps) => (
+              <div className="horizon" />
+              <div className="grid grid-cols-4 gap-8 pt-2">
+                {stats.map(({ quantity, description, suffix }: statsProps) => (
                   <motion.div
                     key={description}
-                    className="space-y-2 text-center"
+                    className="space-y-1 text-center"
                     variants={fadeUpVariants}
                   >
-                    <h2 className="text-3xl sm:text-4xl font-bold ">
+                    <h2 className="text-3xl sm:text-4xl font-bold text-primary">
                       <NumberTicker value={quantity} />
+                      {suffix && <span className="text-2xl">{suffix}</span>}
                     </h2>
-                    <p className="text-xl text-muted-foreground">{description}</p>
+                    <p className="mono text-muted-foreground">{description}</p>
                   </motion.div>
                 ))}
               </div>
             </motion.section>
           </motion.div>
         </motion.div>
-        <Separator className="my-4 lg:hidden w-[90%] mx-auto" />
+
+        <Separator className="my-4 lg:hidden w-[90%] mx-auto opacity-30" />
+
         <motion.section id="statistics" variants={fadeUpVariants} className="pt-8 lg:hidden">
-              <div className="grid grid-cols-4 gap-8">
-                {stats.map(({ quantity, description }: statsProps) => (
-                  <motion.div
-                    key={description}
-                    className="space-y-2 text-center"
-                    variants={fadeUpVariants}
-                  >
-                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold ">
-                      <NumberTicker value={quantity} />
-                      {description === "Members" && <span className="text-xl">+</span>}
-                    </h2>
-                    <p className="text-xl text-muted-foreground">{description}</p>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.section>
+          <div className="grid grid-cols-4 gap-8">
+            {stats.map(({ quantity, description, suffix }: statsProps) => (
+              <motion.div
+                key={description}
+                className="space-y-1 text-center"
+                variants={fadeUpVariants}
+              >
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary">
+                  <NumberTicker value={quantity} />
+                  {suffix && <span className="text-xl">{suffix}</span>}
+                </h2>
+                <p className="mono text-muted-foreground">{description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </motion.section>
       </div>
     </motion.section>
   );
