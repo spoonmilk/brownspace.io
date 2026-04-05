@@ -27,6 +27,7 @@ const routeList: RouteProps[] = [
   { href: "/projects", label: "Projects" },
   { href: "/subgroups", label: "Subgroups" },
   { href: "/sponsors", label: "Sponsors" },
+  { href: "/blog", label: "Blog" },
   { href: "/mailto:recipient@example.com", label: "Contact" },
 ];
 

@@ -11,6 +11,8 @@ import { ThemeProvider } from './components/theme-provider.tsx';
 import ProjectsPage from './pages/ProjectsPage.tsx'
 import SubgroupsPage from './pages/SubgroupsPage.tsx'
 import SponsorsPage from './pages/SponsorsPage.tsx'
+import BlogPage from './pages/BlogPage.tsx'
+import BlogPostPage from './pages/BlogPostPage.tsx'
 
 const router = createBrowserRouter([
   {
@@ -37,7 +39,17 @@ const router = createBrowserRouter([
     path: "/sponsors",
     element: <SponsorsPage />,
     errorElement: <Home />
-  }
+  },
+  {
+    path: "/blog",
+    element: <BlogPage />,
+    errorElement: <Home />
+  },
+  {
+    path: "/blog/:slug",
+    element: <BlogPostPage />,
+    errorElement: <Home />
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
