@@ -13,6 +13,7 @@ import SubgroupsPage from './pages/SubgroupsPage.tsx'
 import SponsorsPage from './pages/SponsorsPage.tsx'
 import BlogPage from './pages/BlogPage.tsx'
 import BlogPostPage from './pages/BlogPostPage.tsx'
+import BlogSubmitPage from './pages/BlogSubmitPage.tsx'
 
 const router = createBrowserRouter([
   {
@@ -43,6 +44,11 @@ const router = createBrowserRouter([
   {
     path: "/blog",
     element: <BlogPage />,
+    errorElement: <Home />
+  },
+  {
+    path: "/blog/submit",
+    element: <BlogSubmitPage />,
     errorElement: <Home />
   },
   {

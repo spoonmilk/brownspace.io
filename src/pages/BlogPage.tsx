@@ -63,10 +63,24 @@ export default function BlogPage() {
       <main className="container py-24 flex-1">
 
         <div className="section-tag mb-4">Transmissions</div>
-        <h1 className="text-4xl md:text-5xl font-bold mb-4">BSE Blog</h1>
+        <div className="flex items-end justify-between mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold">BSE Blog</h1>
+          <a
+            href="/blog/submit"
+            className="mono text-xs tracking-widest text-primary border border-primary/30 px-4 py-2 rounded-md hover:bg-primary/10 hover:border-primary/50 transition-colors hidden sm:block"
+          >
+            + SUBMIT A POST
+          </a>
+        </div>
         <p className="text-muted-foreground text-lg mb-2">
           Updates, research notes, and stories from our members.
         </p>
+        <a
+          href="/blog/submit"
+          className="mono text-xs tracking-widest text-primary sm:hidden mb-2 inline-block"
+        >
+          + SUBMIT A POST
+        </a>
         <div className="horizon mb-12" />
 
         {loading && (
