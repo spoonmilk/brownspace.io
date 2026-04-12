@@ -11,7 +11,13 @@
 //   3. Creates a DRAFT blogPost document via the Mutations API
 //   4. Returns the new document ID
 
-import type { VercelRequest, VercelResponse } from "@vercel/node";
+import type { IncomingMessage, ServerResponse } from "node:http";
+
+type VercelRequest = IncomingMessage & { body: any; method?: string };
+type VercelResponse = ServerResponse & {
+  status: (code: number) => VercelResponse;
+  json: (body: unknown) => void;
+};
 
 const PROJECT_ID = process.env.VITE_SANITY_PROJECT_ID!;
 const DATASET    = process.env.VITE_SANITY_DATASET ?? "production";

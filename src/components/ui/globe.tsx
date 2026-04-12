@@ -3,7 +3,6 @@
 import { cn } from "@/lib/utils";
 import createGlobe, { COBEOptions } from "cobe";
 import { useCallback, useEffect, useRef } from "react";
-import { useSpring } from "react-spring";
 
 const GLOBE_CONFIG: COBEOptions = {
   width: 700,
@@ -19,8 +18,8 @@ const GLOBE_CONFIG: COBEOptions = {
   baseColor: [1, 1, 1],
   markerColor: [0.7, 0, 0],
   glowColor: [0.7, 0.7, 0.7],
-  markers: [ 
-    { location: [41.8240, -71.4128], size: 0.15 }, // Increased size of the marker
+  markers: [
+    { location: [41.824, -71.4128], size: 0.15 },
   ],
 };
 
@@ -34,39 +33,33 @@ export default function Globe({
   let phi = 0;
   let width = 0;
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const pointerInteracting = useRef(null);
+  const pointerInteracting = useRef<number | null>(null);
   const pointerInteractionMovement = useRef(0);
-  const [{ r }, api] = useSpring(() => ({
-    r: 1,
-    config: {
-      mass: 1,
-      tension: 280,
-      friction: 40,
-      precision: 0.001,
-    },
-  }));
+  const rCurrent = useRef(0);
+  const rTarget = useRef(0);
 
-  const updatePointerInteraction = (value: any) => {
+  const updatePointerInteraction = (value: number | null) => {
     pointerInteracting.current = value;
-    canvasRef.current!.style.cursor = value ? "grabbing" : "grab";
+    canvasRef.current!.style.cursor = value !== null ? "grabbing" : "grab";
   };
 
-  const updateMovement = (clientX: any) => {
+  const updateMovement = (clientX: number) => {
     if (pointerInteracting.current !== null) {
       const delta = clientX - pointerInteracting.current;
       pointerInteractionMovement.current = delta;
-      api.start({ r: delta / 200 });
+      rTarget.current = delta / 200;
     }
   };
 
   const onRender = useCallback(
     (state: Record<string, any>) => {
       if (!pointerInteracting.current) phi += 0.03;
-      state.phi = phi + r.get();
+      rCurrent.current += (rTarget.current - rCurrent.current) * 0.15;
+      state.phi = phi + rCurrent.current;
       state.width = width * 2;
       state.height = width * 2;
     },
-    [pointerInteracting, phi, r]
+    [pointerInteracting, phi]
   );
 
   const onResize = () => {
