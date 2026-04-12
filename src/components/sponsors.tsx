@@ -44,6 +44,15 @@ export const Sponsors = () => {
               desc="CUBECOM designs, develops and manufactures reliable communication sub-systems for satellites, with a range of high datarate antennas and transmitters."
             />
           </a>
+          <a href="https://zulip.com/">
+            <SponsorCard
+              tier="Product Sponsor"
+              img="/sponsor_logos/zulip_logo.svg"
+              imgAlt="Zulip"
+              scale={0.8}
+              desc="Zulip is an organized team chat app designed for efficient communication."
+            />
+          </a>
         </div>
 
         <div className="flex flex-col items-center gap-3 mt-16">
