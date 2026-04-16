@@ -2,14 +2,12 @@
 // Vercel serverless function — the Sanity write token never reaches the browser.
 //
 // SETUP:
-//   Add SANITY_WRITE_TOKEN to your Vercel environment variables (NOT prefixed with VITE_).
-//   Also add VITE_SANITY_PROJECT_ID and VITE_SANITY_DATASET if not already there.
-//
-// This function:
-//   1. Validates the incoming post data
-//   2. Uploads any base64 images to Sanity's asset API
-//   3. Creates a DRAFT blogPost document via the Mutations API
-//   4. Returns the new document ID
+//   Add these to your Vercel environment variables (NOT prefixed with VITE_):
+//     SANITY_WRITE_TOKEN   — Sanity editor token
+//     AUTH_SECRET          — same value as your Auth.js AUTH_SECRET
+//     GOOGLE_CLIENT_ID     — from Google Cloud Console
+//     GOOGLE_CLIENT_SECRET — from Google Cloud Console
+//   Also ensure VITE_SANITY_PROJECT_ID and VITE_SANITY_DATASET are set.
 
 import type { IncomingMessage, ServerResponse } from "node:http";
 
@@ -18,6 +16,8 @@ type VercelResponse = ServerResponse & {
   status: (code: number) => VercelResponse;
   json: (body: unknown) => void;
 };
+
+import { getToken } from "next-auth/jwt";
 
 const PROJECT_ID = process.env.VITE_SANITY_PROJECT_ID!;
 const DATASET    = process.env.VITE_SANITY_DATASET ?? "production";
@@ -28,7 +28,7 @@ const API_VER    = "2024-01-01";
 
 interface InlineImage {
   type: "image";
-  base64: string;        // data:<mime>;base64,<data>
+  base64: string;
   mimeType: string;
   caption?: string;
 }
@@ -38,8 +38,8 @@ interface TextBlock {
   style: "normal" | "h2" | "h3" | "blockquote";
   children: Array<{
     text: string;
-    marks?: string[];    // "strong" | "em" | "code"
-    href?: string;       // only when mark includes "link"
+    marks?: string[];
+    href?: string;
   }>;
 }
 
@@ -65,7 +65,6 @@ function authHeader() {
   return { Authorization: `Bearer ${TOKEN}` };
 }
 
-/** Upload a base64 image to Sanity and return its asset _id */
 async function uploadImage(base64: string, mimeType: string): Promise<string> {
   const base64Data = base64.replace(/^data:[^;]+;base64,/, "");
   const buffer     = Buffer.from(base64Data, "base64");
@@ -85,7 +84,6 @@ async function uploadImage(base64: string, mimeType: string): Promise<string> {
   return json.document._id as string;
 }
 
-/** Slugify a title */
 function slugify(title: string): string {
   return title
     .toLowerCase()
@@ -96,15 +94,18 @@ function slugify(title: string): string {
     + "-" + Date.now();
 }
 
-/** Convert a TextBlock child into a Sanity span, handling links */
 function toSanitySpan(child: TextBlock["children"][0], spanKey: string) {
-  const marks = [...(child.marks ?? [])];
+  const marks: string[]    = [];
   const markDefs: object[] = [];
 
-  if (child.href) {
-    const linkKey = `link-${spanKey}`;
-    marks.push(linkKey);
-    markDefs.push({ _type: "link", _key: linkKey, href: child.href });
+  for (const mark of child.marks ?? []) {
+    if (mark === "link") {
+      const linkKey = `link-${spanKey}`;
+      marks.push(linkKey);
+      markDefs.push({ _type: "link", _key: linkKey, href: child.href });
+    } else {
+      marks.push(mark);
+    }
   }
 
   return {
@@ -113,7 +114,6 @@ function toSanitySpan(child: TextBlock["children"][0], spanKey: string) {
   };
 }
 
-/** Convert our body nodes into Sanity Portable Text blocks */
 async function buildPortableText(body: BodyNode[]) {
   const blocks: object[] = [];
 
@@ -132,7 +132,6 @@ async function buildPortableText(body: BodyNode[]) {
       continue;
     }
 
-    // text block
     const spans:    object[] = [];
     const markDefs: object[] = [];
 
@@ -158,34 +157,44 @@ async function buildPortableText(body: BodyNode[]) {
 // ── Handler ───────────────────────────────────────────────────────────────────
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
-  // Only accept POST
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Method not allowed" });
   }
 
-  // Basic validation
+  // ── Auth check ──────────────────────────────────────────────────────────────
+  const token = await getToken({
+    req:    req as any,
+    secret: process.env.AUTH_SECRET!,
+  });
+
+  if (!token) {
+    return res.status(401).json({ error: "You must be signed in to submit a post." });
+  }
+
+  const email = (token.email as string) ?? "";
+  if (!email.endsWith("@brown.edu")) {
+    return res.status(403).json({ error: "Only @brown.edu accounts can submit posts." });
+  }
+  // ────────────────────────────────────────────────────────────────────────────
+
   const payload = req.body as SubmitPayload;
   if (!payload.title || !payload.author || !payload.excerpt || !payload.body?.length) {
     return res.status(400).json({ error: "Missing required fields." });
   }
 
   try {
-    // 1. Upload cover image if provided
     let coverImageRef: object | undefined;
     if (payload.coverImageBase64 && payload.coverImageMime) {
       const assetId = await uploadImage(payload.coverImageBase64, payload.coverImageMime);
       coverImageRef = {
-        _type:  "image",
-        asset:  { _type: "reference", _ref: assetId },
+        _type: "image",
+        asset: { _type: "reference", _ref: assetId },
       };
     }
 
-    // 2. Build Portable Text body (uploads any inline images)
     const portableBody = await buildPortableText(payload.body);
-
-    // 3. Build the Sanity document — created as a DRAFT (id prefixed with "drafts.")
-    const docId  = `drafts.blog-${Date.now()}`;
-    const slug   = slugify(payload.title);
+    const docId        = `drafts.blog-${Date.now()}`;
+    const slug         = slugify(payload.title);
 
     const doc = {
       _id:         docId,
@@ -196,11 +205,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       excerpt:     payload.excerpt,
       publishedAt: new Date().toISOString(),
       body:        portableBody,
-      ...(payload.subgroup    ? { subgroup:    payload.subgroup }    : {}),
-      ...(coverImageRef       ? { coverImage:  coverImageRef }       : {}),
+      ...(payload.subgroup  ? { subgroup:   payload.subgroup  } : {}),
+      ...(coverImageRef     ? { coverImage: coverImageRef     } : {}),
     };
 
-    // 4. Send to Sanity
     const mutRes = await fetch(sanityUrl(`data/mutate/${DATASET}`), {
       method:  "POST",
       headers: { ...authHeader(), "Content-Type": "application/json" },
