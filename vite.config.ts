@@ -13,10 +13,6 @@ export default defineConfig({
     },
   },
   plugins: [react()],
-  define: {
-    // Polyfill process.env for browser — required by next-auth
-    'process.env': {}
-  },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),

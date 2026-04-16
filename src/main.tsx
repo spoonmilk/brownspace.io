@@ -8,7 +8,6 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import { ThemeProvider } from './components/theme-provider.tsx';
-import { SessionProvider } from "next-auth/react";
 import ProjectsPage from './pages/ProjectsPage.tsx'
 import SubgroupsPage from './pages/SubgroupsPage.tsx'
 import SponsorsPage from './pages/SponsorsPage.tsx'
@@ -61,10 +60,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <SessionProvider>
-      <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
-        <RouterProvider router={router} />
-      </ThemeProvider>
-    </SessionProvider>
+    <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme"> 
+      <RouterProvider router={router} />
+    </ThemeProvider>
   </React.StrictMode>,
 )
