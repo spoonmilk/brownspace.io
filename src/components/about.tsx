@@ -1,5 +1,5 @@
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion, useInView, useAnimation } from "framer-motion";
+import { useRef, useEffect } from "react";
 import Globe from "./ui/globe";
 import NumberTicker from "@/components/ui/number-ticker";
 import { Separator } from "./ui/separator";
@@ -19,7 +19,16 @@ export const About = () => {
   ];
 
   const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, { once: true, margin: "0px 0px -50% 0px" });
+  const isInView   = useInView(sectionRef, { once: true, margin: "0px 0px -50% 0px" });
+  const controls   = useAnimation();
+  const hasPlayed  = useRef(false);
+
+  useEffect(() => {
+    if (isInView && !hasPlayed.current) {
+      hasPlayed.current = true;
+      controls.start("visible");
+    }
+  }, [isInView, controls]);
 
   const fadeUpVariants = {
     hidden: { opacity: 0, y: 50 },
@@ -32,7 +41,7 @@ export const About = () => {
       className="container pb-32 pt-16 scale-90"
       ref={sectionRef}
       initial="hidden"
-      animate={isInView ? "visible" : "hidden"}
+      animate={controls}
       variants={{
         hidden: {},
         visible: { transition: { staggerChildren: 0.2 } },

@@ -42,7 +42,7 @@ const subgroupData = [
     label: "06",
     description:
       "Focuses on unique, space-related research projects outside the scope of BSE's bigger projects. Last year, R&D competed in the Plant the Moon Challenge, experimenting with cacti growth in lunar highlight and mare simulant, and winning the award for Best Analysis of Data.",
-    imageUrl: "logo.png",
+    imageUrl: "bse_logo.png",
   },
   {
     team: "Structures",

@@ -44,13 +44,17 @@ const articleList: ArticleProps[] = [
 ];
 
 export const Projects = () => {
-  const navigate = useNavigate();
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "0px 0px -250px 0px" });
+  const navigate    = useNavigate();
+  const ref         = useRef(null);
+  const inView      = useInView(ref, { once: true, margin: "0px 0px -250px 0px" });
   const cardControls = useAnimation();
+  const hasPlayed   = useRef(false);
 
   useEffect(() => {
-    if (inView) cardControls.start("visible");
+    if (inView && !hasPlayed.current) {
+      hasPlayed.current = true;
+      cardControls.start("visible");
+    }
   }, [inView, cardControls]);
 
   const handleCardClick = (link: string) => {

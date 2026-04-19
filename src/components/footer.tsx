@@ -4,9 +4,9 @@ export const Footer = () => {
       <div className="horizon w-11/12 mx-auto" />
       <section className="container py-16 flex flex-col gap-6">
         <div className="flex flex-wrap items-center gap-8">
-          <img src="icon.png" alt="Brown Space Engineering Logo" className="h-10 w-auto dark:invert" />
-          <img src="brownengn.png" alt="Brown School of Engineering Logo" className="h-8 w-auto dark:hidden" />
-          <img src="brownengn_whtxt.png" alt="Brown School of Engineering Logo" className="h-8 w-auto hidden dark:block" />
+          <img src="/bse_logo.png" alt="Brown Space Engineering Logo" className="h-10 w-auto" />
+          <img src="/brownengn.png" alt="Brown School of Engineering Logo" className="h-8 w-auto dark:hidden" />
+          <img src="/brownengn_whtxt.png" alt="Brown School of Engineering Logo" className="h-8 w-auto hidden dark:block" />
           <a href="https://github.com/BrownSpaceEngineering" target="_blank" rel="noopener noreferrer">
             <img src="/github-mark.svg" alt="GitHub Logo" className="h-8 w-auto dark:invert opacity-70 hover:opacity-100 transition-opacity" />
           </a>

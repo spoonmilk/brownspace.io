@@ -1,4 +1,4 @@
-import { useRef, useEffect, useState, Suspense } from "react";
+import { useRef, useEffect, Suspense, Component, ReactNode } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, useGLTF, Environment } from "@react-three/drei";
 import { motion, useAnimation, useInView } from "framer-motion";
@@ -66,16 +66,29 @@ function Model() {
   );
 }
 
+// Catches WebGL crashes so the rest of the page still renders
+class WebGLErrorBoundary extends Component<
+  { children: ReactNode },
+  { failed: boolean }
+> {
+  state = { failed: false };
+  static getDerivedStateFromError() { return { failed: true }; }
+  render() {
+    if (this.state.failed) return null;
+    return this.props.children;
+  }
+}
+
 export const Services = () => {
   const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, { once: true });
-  const controls = useAnimation();
-  const [grayscale, setGrayscale] = useState(false);
+  const isInView   = useInView(sectionRef, { once: true });
+  const controls   = useAnimation();
+  const hasPlayed  = useRef(false);
 
   useEffect(() => {
-    if (isInView) {
+    if (isInView && !hasPlayed.current) {
+      hasPlayed.current = true;
       controls.start("visible");
-      setTimeout(() => setGrayscale(true), 2000);
     }
   }, [isInView, controls]);
 
@@ -140,13 +153,9 @@ export const Services = () => {
                     scale: 1.03,
                     transition: { type: "spring", stiffness: 300 },
                   },
-                  unhover: {
-                    scale: 1,
-                    transition: { type: "spring", stiffness: 300 },
-                  },
                 }}
                 whileHover="hover"
-                animate={grayscale ? "unhover" : controls}
+                animate={controls}
                 initial="hidden"
               >
                 <Card className="glow-border transition-colors">
@@ -169,18 +178,24 @@ export const Services = () => {
           </div>
         </motion.div>
 
-        <Canvas
-          className="hidden w-full max-w-[300px] md:min-w-[700px] lg:max-w-[700px] lg:block absolute top-[50px]"
-          camera={{ position: [110, 110, 200], fov: 50 }}
-        >
-          <ambientLight intensity={0.5} />
-          <directionalLight position={[10, 10, 10]} />
-          <Environment preset="studio" background={false} />
-          <Suspense fallback={null}>
-            <Model />
-          </Suspense>
-          <OrbitControls target={[0, 0, 0]} />
-        </Canvas>
+        <WebGLErrorBoundary>
+          <div className="hidden lg:block w-full max-w-[700px] h-[500px]">
+            <Canvas
+              className="w-full h-full"
+              camera={{ position: [110, 110, 120], fov: 50 }}
+              gl={{ antialias: true, powerPreference: "high-performance" }}
+              dpr={Math.min(window.devicePixelRatio, 1.5)}
+            >
+              <ambientLight intensity={0.5} />
+              <directionalLight position={[10, 10, 10]} />
+              <Environment preset="studio" background={false} />
+              <Suspense fallback={null}>
+                <Model />
+              </Suspense>
+              <OrbitControls target={[0, 0, 0]} enableZoom={false} />
+            </Canvas>
+          </div>
+        </WebGLErrorBoundary>
       </motion.div>
     </section>
   );

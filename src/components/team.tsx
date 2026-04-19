@@ -125,10 +125,11 @@ export const Team = ({ subgroup }: TeamProps) => {
             whileHover={{ scale: 1.05 }}
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             className={members.length < 4 ? "w-[calc(25%-1.5rem)] min-w-[180px]" : ""}
           >
             <Card className="h-[180px] bg-muted/50 relative mt-8 flex flex-col">
-              <CardHeader className="flex-1 flex flex-col justify-end items-center pb-5 pt-14">
+              <CardHeader className="flex-1 flex flex-col justify-end items-center pb-2 pt-14 px-2">
                 {member.photo && (
                   <img
                     src={urlFor(member.photo)}
