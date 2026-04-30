@@ -20,7 +20,7 @@ function Members() {
         <Team subgroup="R&D" />
         <Team subgroup="Robotics" />
         <Team subgroup="Structures" />
-        
+        <Team subgroup="Alumni" />
         
       </section>
       <div className="mt-12">

@@ -34,6 +34,7 @@ export const memberSchema = defineType({
           { title: "R&D", value: "R&D" },
           { title: "Robotics", value: "Robotics"},
           { title: "Structures", value: "Structures" },
+          { title: "Alumni", value: "Alumni"},
         ],
         // layout: "tags",
       },
